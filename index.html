@@ -46,6 +46,11 @@ a{color:inherit}
 .band{display:flex; align-items:center; gap:14px; margin:26px 0 14px}
 .band .ln{flex:1; height:1px; background:var(--rules)}
 .chips{display:flex; flex-wrap:wrap; gap:7px}
+.covstats{display:grid; grid-template-columns:1fr 1fr; gap:18px 26px}
+.covstats .v{font-size:clamp(20px,2.2vw,28px); font-weight:700; letter-spacing:-.02em}
+.covstats .k{font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); margin-top:4px}
+.chartbox{margin-top:16px; border:1px solid var(--rules); border-radius:4px; background:var(--paper); padding:18px 20px}
+.chartbox .chart{max-width:820px}
 .chip{border:1px solid var(--rules); border-radius:3px; padding:6px 10px; font-size:11.5px; color:var(--ink70); background:var(--paper); white-space:nowrap}
 
 .cover{padding:34px 0 40px; border-bottom:1px solid var(--rules)}
@@ -219,20 +224,14 @@ table.t tr.hi td{background:var(--aqua2); font-weight:700}
     <div class="cover-grid">
       <div>
         <h1 class="h1">Four brands.<br>Four gaps in the market.</h1>
-        <p class="lede" style="max-width:52ch; margin-top:12px">Each one answers a need people already have and nobody is serving well. All four would be made on our own floor, which is why they can be on a shelf in a quarter rather than a year.</p>
-        <p class="sm" style="max-width:52ch; margin-top:14px"><b style="color:var(--ink)">What this is.</b> Four ideas we believe in, and the case for each. No branding, packaging or formulation has been designed yet. Every image here is a concept render or reference photography, made to show the territory rather than to show the product.</p>
+        <p class="lede" style="max-width:50ch; margin-top:14px">Each one answers a need people already have and nobody is serving well, built on a platform that already exists.</p>
+        <p class="sm" style="max-width:50ch; margin-top:12px">Nothing is designed or priced yet. This is the case for each idea, shown with concept imagery only.</p>
       </div>
-      <div>
-        <div class="eyebrow q" style="margin-bottom:9px">What sits behind every one of them</div>
-        <div class="chips">
-          <span class="chip">800+ stock formulas</span>
-          <span class="chip">1,000+ flavours</span>
-          <span class="chip">400M+ sticks a year</span>
-          <span class="chip">50K+ sachets a day</span>
-          <span class="chip">ISO 17025 lab on site</span>
-          <span class="chip">FDA registered &middot; cGMP</span>
-          <span class="chip">SQF &middot; NSF &middot; Halal &middot; Kosher</span>
-        </div>
+      <div class="covstats">
+        <div class="fg"><div class="v">800+</div><div class="k">Stock formulas</div></div>
+        <div class="fg"><div class="v">1,000+</div><div class="k">Flavours in rotation</div></div>
+        <div class="fg"><div class="v">400M+</div><div class="k">Sticks a year</div></div>
+        <div class="fg"><div class="v">ISO 17025</div><div class="k">Lab on site</div></div>
       </div>
     </div>
     <div class="band" style="margin-bottom:0">
@@ -377,10 +376,36 @@ table.t tr.hi td{background:var(--aqua2); font-weight:700}
         <p class="sm" style="margin-top:9px">Take what is proven, make it better, then make it ours.</p>
       </div>
 
-      <div class="gtm">
+            <div class="chartbox">
+        <div class="eyebrow q">The map, and where STALK would sit</div>
+        <svg class="chart" style="margin-top:12px" viewBox="0 0 820 400" role="img" aria-label="Positioning map: competitors sell on worry at premium prices; STALK sits alone selling on evidence at a premium price">
+          <rect x="430" y="30" width="360" height="165" fill="#E9FBF9"/>
+          <line x1="70" y1="360" x2="790" y2="360" stroke="rgba(17,24,25,.3)"/>
+          <line x1="70" y1="30" x2="70" y2="360" stroke="rgba(17,24,25,.3)"/>
+          <g font-size="11.5" fill="#697376" letter-spacing="1.4">
+            <text x="70" y="382">SELLS ON WORRY</text>
+            <text x="790" y="382" text-anchor="end">SELLS ON EVIDENCE</text>
+            <text x="58" y="40" text-anchor="end" transform="rotate(-90 58 40)">PREMIUM</text>
+            <text x="58" y="360" transform="rotate(-90 58 360)" text-anchor="start">EVERYDAY</text>
+          </g>
+          <g font-size="13.5" fill="#111819">
+            <circle cx="175" cy="95" r="7" fill="#B9B7B0"/><text x="190" y="100">NuBest</text>
+            <circle cx="150" cy="150" r="7" fill="#B9B7B0"/><text x="165" y="155">Doctor Taller</text>
+            <circle cx="235" cy="190" r="7" fill="#B9B7B0"/><text x="250" y="195">TrueHeight</text>
+            <circle cx="310" cy="290" r="7" fill="#B9B7B0"/><text x="325" y="295">SmartyPants</text>
+            <circle cx="205" cy="325" r="7" fill="#B9B7B0"/><text x="220" y="330">Cartoon gummies</text>
+            <circle cx="640" cy="300" r="7" fill="none" stroke="#B9B7B0" stroke-width="2" stroke-dasharray="3 3"/><text x="655" y="305" fill="#697376">Thorne <tspan font-size="11.5">(adults only)</tspan></text>
+            <circle cx="655" cy="90" r="10" fill="#0B7E88"/><text x="672" y="95" font-weight="700">STALK</text>
+          </g>
+          <text x="440" y="215" font-size="11.5" fill="#0B7E88" letter-spacing="1.2">EMPTY UNTIL NOW</text>
+        </svg>
+        <p class="sm" style="margin-top:8px">Positions are directional, based on how each brand markets, not on measured data.</p>
+      </div>
+
+<div class="gtm">
       <div class="hd">How it launches</div>
       <div class="rows">
-        <div class="ph"><div class="k">Before</div><div class="t">Subscription, direct</div><div class="b">Launch on the Growth Pack and its wall height chart. It builds a base of parents who already know the name before it hits your shelf.</div></div>
+        <div class="ph"><div class="k">Before</div><div class="t">Subscription, direct</div><div class="b">Launch on the Growth Pack and its wall height chart, direct and on Amazon. It builds a base of parents who already know the name before it reaches a shelf.</div></div>
         <div class="ph"><div class="k">At launch</div><div class="t">The science, in public</div><div class="b">Publish the competitive benchmark rather than filing it. Pediatric and practitioner voices, parenting communities, and back to school.</div></div>
         <div class="ph"><div class="k">In store</div><div class="t">Above the gummies</div><div class="b">Placed and priced as the premium choice, clearly apart from the cartoon brands, so a parent sees it in one glance.</div></div>
       </div>
@@ -498,10 +523,29 @@ table.t tr.hi td{background:var(--aqua2); font-weight:700}
         <p class="sm" style="margin-top:9px">Everyone competes on formula and flavour. Nobody competes on the occasion, which is the thing the customer actually has.</p>
       </div>
 
+      <div class="chartbox">
+        <div class="eyebrow q">The price of a stick today</div>
+        <svg class="chart" style="margin-top:12px" viewBox="0 0 820 210" role="img" aria-label="Price per stick: private label copies at fifty cents, LMNT at one dollar fifty, with the middle of the range open">
+          <rect x="295" y="72" width="235" height="56" rx="4" fill="#E9FBF9" stroke="rgba(15,166,182,.4)"/>
+          <line x1="70" y1="128" x2="750" y2="128" stroke="rgba(17,24,25,.3)"/>
+          <g font-size="12" fill="#697376">
+            <text x="70" y="150">$0</text><text x="410" y="150" text-anchor="middle">$1.00</text><text x="750" y="150" text-anchor="end">$2.00</text>
+          </g>
+          <circle cx="240" cy="128" r="8" fill="#B9B7B0"/>
+          <text x="240" y="105" font-size="14" font-weight="700" fill="#111819" text-anchor="middle">$0.50</text>
+          <text x="240" y="176" font-size="12.5" fill="#697376" text-anchor="middle">Private label copies</text>
+          <circle cx="580" cy="128" r="8" fill="#3A4446"/>
+          <text x="580" y="105" font-size="14" font-weight="700" fill="#111819" text-anchor="middle">$1.50</text>
+          <text x="580" y="176" font-size="12.5" fill="#697376" text-anchor="middle">LMNT</text>
+          <text x="412" y="58" font-size="12" fill="#0B7E88" letter-spacing="1.2" text-anchor="middle">THE OPEN MIDDLE</text>
+          <text x="412" y="200" font-size="11.5" fill="#697376" text-anchor="middle">A branded system priced between the copy and the cult. Pricing per the Wegmans category analysis.</text>
+        </svg>
+      </div>
+
 <div class="gtm">
       <div class="hd">How it launches</div>
       <div class="rows">
-        <div class="ph"><div class="k">Before</div><div class="t">Sell the whole row</div><div class="b">Launch direct with all seven together. Nobody knows which Plus One is theirs until they try the row, and that discovery is what makes the repeat.</div></div>
+        <div class="ph"><div class="k">Before</div><div class="t">Sell the whole row</div><div class="b">Launch direct and on Amazon with all seven together. Nobody knows which Plus One is theirs until they try the row, and that discovery is what makes the repeat.</div></div>
         <div class="ph"><div class="k">At launch</div><div class="t">Sampling where the occasion lives</div><div class="b">A stick is a sample. Festivals, gyms, hotel desks and race packs put the product in the hand at the exact moment of need.</div></div>
         <div class="ph"><div class="k">In store</div><div class="t">The full row together</div><div class="b">All seven side by side so the system reads at a glance, with singles at the checkout for the occasion someone just remembered.</div></div>
       </div>
@@ -601,10 +645,35 @@ table.t tr.hi td{background:var(--aqua2); font-weight:700}
         </div>
       </div>
 
+      <div class="chartbox">
+        <div class="eyebrow q">Every format on one map</div>
+        <svg class="chart" style="margin-top:12px" viewBox="0 0 820 400" role="img" aria-label="Format map: tubs and shakers stay in the kitchen, bars and bottles travel but are snacks; a measured serving that travels is empty until now">
+          <rect x="430" y="30" width="360" height="165" fill="#E9FBF9"/>
+          <line x1="70" y1="30" x2="70" y2="360" stroke="rgba(17,24,25,.3)"/>
+          <line x1="70" y1="360" x2="790" y2="360" stroke="rgba(17,24,25,.3)"/>
+          <line x1="70" y1="195" x2="790" y2="195" stroke="rgba(17,24,25,.14)"/>
+          <line x1="430" y1="30" x2="430" y2="360" stroke="rgba(17,24,25,.14)"/>
+          <g font-size="11.5" fill="#697376" letter-spacing="1.4">
+            <text x="70" y="382">STAYS IN THE KITCHEN</text>
+            <text x="790" y="382" text-anchor="end">GOES WITH YOU</text>
+            <text x="58" y="40" text-anchor="end" transform="rotate(-90 58 40)">A MEASURED SERVING</text>
+            <text x="58" y="360" transform="rotate(-90 58 360)" text-anchor="start">A SNACK</text>
+          </g>
+          <g font-size="13.5" fill="#111819">
+            <circle cx="160" cy="90" r="7" fill="#B9B7B0"/><text x="175" y="95">The tub</text>
+            <circle cx="230" cy="140" r="7" fill="#B9B7B0"/><text x="245" y="145">Scoop and shaker</text>
+            <circle cx="600" cy="320" r="7" fill="#B9B7B0"/><text x="615" y="325">The bar</text>
+            <circle cx="520" cy="255" r="7" fill="#B9B7B0"/><text x="535" y="260">The RTD bottle <tspan font-size="11.5" fill="#697376">(mostly water)</tspan></text>
+            <circle cx="660" cy="88" r="10" fill="#0B7E88"/><text x="677" y="93" font-weight="700">CARRY</text>
+          </g>
+          <text x="440" y="215" font-size="11.5" fill="#0B7E88" letter-spacing="1.2">EMPTY UNTIL NOW</text>
+        </svg>
+      </div>
+
 <div class="gtm">
       <div class="hd">How it launches</div>
       <div class="rows">
-        <div class="ph"><div class="k">Before</div><div class="t">The bowl by the door</div><div class="b">Sell a 30-count direct on one image: a bowl of sachets next to the keys. The habit is the product, and it builds the customer base before retail.</div></div>
+        <div class="ph"><div class="k">Before</div><div class="t">The bowl by the door</div><div class="b">Sell a 30-count direct and on Amazon, on one image: a bowl of sachets next to the keys. The habit is the product, and it builds the customer base before retail.</div></div>
         <div class="ph"><div class="k">At launch</div><div class="t">Where kitchens are not</div><div class="b">Hotels, airport retail, gym front desks and corporate wellness. Each one proves the format in a channel with no tub competition.</div></div>
         <div class="ph"><div class="k">In store</div><div class="t">Three places at once</div><div class="b">Singles at the checkout, twelve-packs in travel, thirty-packs beside the tubs, where the price per serving does the selling.</div></div>
       </div>
@@ -716,12 +785,36 @@ table.t tr.hi td{background:var(--aqua2); font-weight:700}
         </div>
       </div>
 
+      <div class="chartbox">
+        <div class="eyebrow q">Two flavour lists, one customer</div>
+        <svg class="chart" style="margin-top:12px" viewBox="0 0 820 330" role="img" aria-label="Functional drinks taste of berry and citrus; people under thirty order mango con chile, tamarindo, jamaica, horchata, chamoy and guayaba">
+          <g font-size="11.5" letter-spacing="1.4" fill="#697376">
+            <text x="80" y="40">WHAT FUNCTIONAL DRINKS TASTE LIKE</text>
+            <text x="470" y="40">WHAT UNDER-30S ACTUALLY ORDER</text>
+          </g>
+          <line x1="410" y1="24" x2="410" y2="310" stroke="rgba(17,24,25,.14)"/>
+          <g font-size="14.5" fill="#111819">
+            <circle cx="92" cy="78" r="7" fill="#B9B7B0"/><text x="110" y="83">Berry</text>
+            <circle cx="92" cy="126" r="7" fill="#B9B7B0"/><text x="110" y="131">Citrus</text>
+            <circle cx="92" cy="174" r="7" fill="#B9B7B0"/><text x="110" y="179">Tropical punch</text>
+            <circle cx="92" cy="222" r="7" fill="#B9B7B0"/><text x="110" y="227">Blue raspberry</text>
+            <circle cx="482" cy="78" r="7" fill="#B4232B"/><text x="500" y="83">Mango con chile</text>
+            <circle cx="482" cy="121" r="7" fill="#F2A81D"/><text x="500" y="126">Tamarindo</text>
+            <circle cx="482" cy="164" r="7" fill="#157A4E"/><text x="500" y="169">Jamaica</text>
+            <circle cx="482" cy="207" r="7" fill="#1B4F9C"/><text x="500" y="212">Horchata</text>
+            <circle cx="482" cy="250" r="7" fill="#E8388A"/><text x="500" y="255">Chamoy</text>
+            <circle cx="482" cy="293" r="7" fill="#E4610F"/><text x="500" y="298">Guayaba</text>
+          </g>
+          <text x="92" y="292" font-size="12.5" fill="#697376">Same customer. Zero overlap.</text>
+        </svg>
+      </div>
+
 <div class="gtm">
       <div class="hd">How it launches</div>
       <div class="rows">
         <div class="ph"><div class="k">Before</div><div class="t">Sold where it is filmed</div><div class="b">Social commerce first, with creator-led drops. The first taste of chamoy on camera is the entire advertisement, and it builds the audience before retail.</div></div>
         <div class="ph"><div class="k">At launch</div><div class="t">Inside the culture</div><div class="b">Music, food creators and festival partnerships, with Latin founders and a culinary partner named on the brand.</div></div>
-        <div class="ph"><div class="k">In store</div><div class="t">Impossible to walk past</div><div class="b">Six saturated colours side by side, and a second placement next to the snacks and candy where these flavours already sell.</div></div>
+        <div class="ph"><div class="k">In store</div><div class="t">Amazon, then everywhere</div><div class="b">Amazon and national retailers first for reach, then convenience and the corner shops that carried these flavours before anyone. Six saturated colours side by side, impossible to walk past.</div></div>
       </div>
     </div>
     <div class="jump"><a href="#carry">&larr; Back: 03 CARRY</a><a class="fwd" href="#supply">Next: 05 Supply &rarr;</a></div>
@@ -778,7 +871,7 @@ table.t tr.hi td{background:var(--aqua2); font-weight:700}
       <div class="r"><div class="o">Third</div><div class="n">STALK</div><div class="w">The premium tier, arriving with its science already published rather than promised.</div></div>
       <div class="r"><div class="o">Fourth</div><div class="n">Mero Mero</div><div class="w">Launches with its founders and creators on the brand, which is what makes the flavour claim credible.</div></div>
     </div>
-    <p class="sm" style="margin-top:12px">Stock formulations from 500 units, custom from 1,000, stick packs from 30,000. Retail-compliant documentation from the first run: COAs on every batch, and label regulatory review handled in house.</p>
+    <p class="sm" style="margin-top:12px">F.A.M.E.-made products already sell through Walmart, Target, Costco, Amazon, Whole Foods, CVS and Publix. Stock formulations from 500 units, custom from 1,000, stick packs from 30,000, with COAs on every batch and label regulatory review handled in house.</p>
   </div>
 </section>
 
