@@ -2,9 +2,6 @@
 <title>Phase One</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow, noarchive">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Archivo:wght@400;600;800&family=Fraunces:opsz,wght@9..144,300;9..144,500&display=swap" rel="stylesheet">
 
 <style>
 :root{
@@ -105,39 +102,6 @@ table.t tr.hi td{background:var(--aqua2); font-weight:700}
 .plate .cap{border-top:1px solid var(--rules); padding:8px 11px; font-size:10.5px; letter-spacing:.13em;
   text-transform:uppercase; color:var(--muted); background:var(--paper)}
 
-/* ---------- identity system spread ---------- */
-.idsys{border:1px solid var(--rules); border-radius:5px; overflow:hidden; margin-top:16px; background:var(--paper)}
-.idsys .top{padding:clamp(22px,3.4vw,42px); display:grid; place-items:center; min-height:190px; position:relative}
-.idsys .top .rt{position:absolute; left:14px; bottom:12px; font-size:10px; letter-spacing:.16em;
-  text-transform:uppercase; color:rgba(17,24,25,.42)}
-.idsys .top.dk .rt{color:rgba(255,255,255,.5)}
-.idsys .lead{padding:13px 18px; border-top:1px solid var(--rules); background:var(--cream);
-  font-size:12.5px; color:var(--muted); display:flex; gap:12px; align-items:baseline; flex-wrap:wrap}
-.idsys .lead b{color:var(--ink); font-size:10.5px; letter-spacing:.16em; text-transform:uppercase}
-.idsys .grid{display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid var(--rules)}
-.idsys .cell{padding:16px 18px; border-right:1px solid var(--rules)}
-.idsys .cell:last-child{border-right:0}
-.idsys .cell .k{font-size:10.5px; letter-spacing:.15em; text-transform:uppercase; color:var(--muted); font-weight:700}
-.sw{display:flex; margin-top:10px; border:1px solid var(--rules); border-radius:3px; overflow:hidden}
-.sw i{flex:1; height:40px; display:block}
-.swl{display:flex; flex-wrap:wrap; gap:4px 12px; margin-top:8px; font-size:10.5px; color:var(--muted); letter-spacing:.04em}
-.spec-t{margin-top:10px; font-size:13px; color:var(--ink70); line-height:1.5}
-.spec-t b{display:block; font-size:15px; color:var(--ink); letter-spacing:-.01em}
-.panel{margin-top:10px}
-.panel svg{width:100%; height:auto; display:block}
-
-/* brand logotypes */
-.lg-stalk{font-family:"Fraunces",Georgia,serif; font-weight:500; font-size:clamp(38px,6vw,74px);
-  letter-spacing:.06em; color:#24503A; line-height:1; display:flex; align-items:center; gap:.18em}
-.lg-stalk .bars{display:inline-flex; flex-direction:column; gap:4px}
-.lg-stalk .bars i{display:block; width:5px; height:9px; background:#24503A; border-radius:1px}
-.lg-plus{display:inline-grid; grid-template-columns:auto auto; gap:0 .06em; border:4px solid #12122A; padding:.16em .2em;
-  font-family:"Archivo",sans-serif; font-weight:800; font-size:clamp(26px,4vw,50px); line-height:.92; color:#12122A; letter-spacing:-.03em}
-.lg-carry{font-family:var(--sans); font-weight:400; font-size:clamp(24px,3.4vw,42px);
-  letter-spacing:.42em; color:#211D16; text-indent:.42em}
-.lg-mero{font-family:"Alfa Slab One",Georgia,serif; font-size:clamp(28px,4.2vw,52px); line-height:.94; color:#FFF3E2;
-  text-align:center; letter-spacing:.01em; background:#B4232B; border:3px solid #F2A81D; outline:3px solid #B4232B;
-  padding:.3em .6em; box-shadow:0 0 0 6px #F2A81D}
 
 .who{display:grid; grid-template-columns:1fr 1fr; margin-top:14px; border:1px solid var(--rules); border-radius:4px; overflow:hidden}
 .who .w{position:relative; aspect-ratio:16/9; overflow:hidden}
@@ -162,6 +126,30 @@ table.t tr.hi td{background:var(--aqua2); font-weight:700}
 .comm .c.hi{background:var(--aqua2)}
 .comm .k{font-size:10.5px; letter-spacing:.13em; text-transform:uppercase; color:var(--muted)}
 .comm .v{font-size:16px; font-weight:700; margin-top:4px; letter-spacing:-.015em}
+
+.win{margin-top:16px; border:1px solid var(--rules); border-radius:4px; overflow:hidden; background:var(--paper)}
+.win .hd{background:var(--aqua); color:var(--ink); padding:10px 13px; font-size:10.5px;
+  letter-spacing:.16em; text-transform:uppercase; font-weight:700}
+.win .rows{display:grid; grid-template-columns:repeat(2,1fr)}
+.win .r{padding:15px 16px; border-right:1px solid var(--rules); border-top:1px solid var(--rules)}
+.win .r:nth-child(2n){border-right:0}
+.win .r .n{font-size:10.5px; letter-spacing:.14em; color:var(--teald); font-weight:700}
+.win .r .t{font-size:15.5px; font-weight:700; letter-spacing:-.014em; margin-top:5px}
+.win .r .b{font-size:13px; color:var(--ink70); line-height:1.55; margin-top:6px}
+
+.refs{margin-top:16px}
+.refs .strip{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; margin-top:10px;
+  border:1px solid var(--rules); border-radius:4px; overflow:hidden; background:var(--rules)}
+.refs .r{background:var(--paper); padding:13px 14px}
+.refs .r .n{font-size:14px; font-weight:700; letter-spacing:-.012em}
+.refs .r .b{font-size:12.5px; color:var(--muted); line-height:1.5; margin-top:5px}
+
+.fullbleed{position:relative; overflow:hidden; min-height:clamp(240px,32vw,420px); display:flex; align-items:center}
+.fullbleed img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover}
+.fullbleed::after{content:""; position:absolute; inset:0; background:linear-gradient(90deg,rgba(9,14,15,.9) 0%,rgba(9,14,15,.62) 46%,rgba(9,14,15,.18) 100%)}
+.fullbleed .in{position:relative; z-index:2; width:100%; max-width:var(--maxw); margin:0 auto; padding:34px var(--gut)}
+.fullbleed h2{color:#fff; font-size:clamp(24px,3.4vw,42px); font-weight:700; letter-spacing:-.03em; line-height:1.06; max-width:22ch}
+.fullbleed p{color:rgba(255,255,255,.82); font-size:clamp(14px,1.4vw,17px); line-height:1.5; margin-top:14px; max-width:56ch}
 
 .gtm{margin-top:16px; border:1px solid var(--rules); border-radius:4px; overflow:hidden; background:var(--paper)}
 .gtm .hd{background:var(--ink); color:#fff; padding:10px 13px; font-size:10.5px; letter-spacing:.16em; text-transform:uppercase; font-weight:700}
@@ -191,10 +179,11 @@ table.t tr.hi td{background:var(--aqua2); font-weight:700}
   .cover-grid{grid-template-columns:1fr; align-items:start}
   .cardgrid{grid-template-columns:1fr 1fr}
   .split,.split.even{grid-template-columns:1fr}
-  .idsys .grid{grid-template-columns:1fr}
-  .idsys .cell{border-right:0; border-bottom:1px solid var(--rules)}
   .comm .row{grid-template-columns:1fr 1fr}
   .gtm .rows{grid-template-columns:1fr}
+  .win .rows{grid-template-columns:1fr}
+  .win .r{border-right:0}
+  .refs .strip{grid-template-columns:1fr 1fr}
   .gtm .ph{border-right:0; border-bottom:1px solid var(--rules)}
   .seq .r{grid-template-columns:80px 1fr}
   .seq .w{grid-column:1 / -1; border-left:0; border-top:1px solid var(--rules)}
@@ -263,11 +252,11 @@ table.t tr.hi td{background:var(--aqua2); font-weight:700}
     <div class="cardgrid">
       <div class="cg"><img src="img/mk-stalk-card.jpg" alt="STALK">
         <div class="ov"><div class="eyebrow">01 &middot; Kids</div><div class="nm">STALK</div><div class="ds">The premium tier the kids' set does not have.</div></div></div>
-      <div class="cg"><img src="img/mk-plus-card.jpg" alt="PLUS 1">
+      <div class="cg"><img src="img/fmt-card.jpg" alt="PLUS 1">
         <div class="ov"><div class="eyebrow">02 &middot; Hydration</div><div class="nm">PLUS 1</div><div class="ds">A system that sells three units, not one.</div></div></div>
       <div class="cg"><img src="img/mk-carry-card.jpg" alt="CARRY">
         <div class="ov"><div class="eyebrow">03 &middot; Protein</div><div class="nm">CARRY</div><div class="ds">The single-serve format protein has never had.</div></div></div>
-      <div class="cg"><img src="img/mk-mero-card.jpg" alt="Mero Mero">
+      <div class="cg"><img src="img/ref-flavour.jpg" alt="Mero Mero">
         <div class="ov"><div class="eyebrow">04 &middot; Flavour</div><div class="nm">Mero Mero</div><div class="ds">The palate of every shopper under thirty.</div></div></div>
     </div>
 
@@ -280,6 +269,14 @@ table.t tr.hi td{background:var(--aqua2); font-weight:700}
     </table>
   </div>
 </section>
+
+<div class="fullbleed">
+  <img src="img/fb-aisle.jpg" alt="">
+  <div class="in">
+    <h2>The aisle is the argument.</h2>
+    <p>Four gaps, in four different sets, in the same store. Each one is a place a shopper is already standing and finding nothing they want. That is the whole thesis, and everything that follows is the detail.</p>
+  </div>
+</div>
 
 <!-- ================= 01 STALK ================= -->
 <div class="bhead" id="stalk">
@@ -310,56 +307,30 @@ table.t tr.hi td{background:var(--aqua2); font-weight:700}
       </div>
     </div>
 
-    <div class="idsys">
-      <div class="top" style="background:#EDF0E8">
-        <div class="lg-stalk"><span class="bars"><i></i><i></i><i></i></span>STALK</div>
-        <div class="rt">One route, sketched to show the territory</div>
-      </div>
-      <div class="grid">
-        <div class="cell">
-          <div class="k">Colour direction</div>
-          <div class="sw">
-            <i style="background:#24503A"></i><i style="background:#5F7F63"></i><i style="background:#C3D0BC"></i>
-            <i style="background:#EDF0E8"></i><i style="background:#F7F4EC"></i><i style="background:#7A6248"></i>
-          </div>
-          <div class="swl"><span>#24503A</span><span>#5F7F63</span><span>#C3D0BC</span><span>#EDF0E8</span><span>#F7F4EC</span><span>#7A6248</span></div>
-          <div class="spec-t">Growth green through sage to bone, with a bark neutral. Nothing bright, nothing childish.</div>
-        </div>
-        <div class="cell">
-          <div class="k">Type feeling</div>
-          <div class="spec-t" style="font-family:'Fraunces',Georgia,serif; font-size:26px; letter-spacing:.02em; color:#24503A">Fraunces</div>
-          <div class="sm" style="margin-top:2px">Display. Warm, high craft, a little editorial. Reads premium without reading pharmaceutical.</div>
-          <div class="spec-t" style="margin-top:12px"><b>Helvetica Neue</b>Text and data. Plain, clinical, the counterweight.</div>
-        </div>
-        <div class="cell">
-          <div class="k">A device worth exploring</div>
-          <div class="panel">
-            <svg viewBox="0 0 200 80" aria-label="Segmented growth bars">
-              <g fill="#24503A"><rect x="10" y="52" width="7" height="18" rx="2"/><rect x="24" y="42" width="7" height="28" rx="2"/><rect x="38" y="30" width="7" height="40" rx="2"/><rect x="52" y="16" width="7" height="54" rx="2"/></g>
-              <g fill="none" stroke="#C3D0BC" stroke-width="1.5"><line x1="76" y1="70" x2="190" y2="70"/><line x1="76" y1="52" x2="190" y2="52"/><line x1="76" y1="34" x2="190" y2="34"/><line x1="76" y1="16" x2="190" y2="16"/></g>
-            </svg>
-          </div>
-          <div class="spec-t">Stacked segments from a bamboo culm. It measures without promising a number.</div>
-        </div>
-      </div>
-      <div class="lead"><b>Direction, not design</b><span>Nothing here is a finished identity. No wordmark, palette, pack or formulation has been designed yet. This is the brief we would give, and the territory we would defend.</span></div>
-    </div>
-
     <div class="card">
       <span class="pill">The range we would build</span>
       <div class="split">
         <div>
           <h3 class="h3" style="margin-top:14px">STALK Power Packs</h3>
-          <p class="p" style="margin-top:8px">One sachet a day, torn into milk or stirred into breakfast. Three age bands so a family stays in the brand for a decade rather than a season.</p>
+          <p class="p" style="margin-top:8px">The deepest driver here is not vitamins. It is protection. From the moment a child is born a parent watches: height, weight, sleep, school, confidence, friends, milestones. A comment from a pediatrician or a comparison in a playground triggers the same question every time. Is my child okay, and am I doing enough?</p>
+          <p class="p">Every brand in the aisle answers that with worry. STALK answers it with evidence, and makes the daily minute feel like a decision a parent made rather than a fear they gave in to. One serving a day, in whichever format suits the household, across three age bands so a family stays in the brand for a decade rather than a season.</p>
           <table class="t" style="margin-top:16px">
             <tr><th style="width:26%">Age band</th><th style="width:26%">Facings</th><th>What it is built around</th></tr>
             <tr><td><b>Ages 2&ndash;4</b></td><td>One</td><td>The first developmental years, gender neutral, minimum sensory friction</td></tr>
-            <tr><td><b>Ages 5&ndash;9</b></td><td>Two, the hero</td><td>The core window and the volume driver</td></tr>
+            <tr class="hi"><td><b>Ages 5&ndash;9</b></td><td>Two, the hero</td><td>The core window and the volume driver</td></tr>
             <tr><td><b>Age 10+</b></td><td>One</td><td>Adolescence, where the family trades up rather than out</td></tr>
+          </table>
+
+          <div class="eyebrow q" style="margin-top:22px">Three ways to buy it</div>
+          <table class="t" style="margin-top:10px">
+            <tr><th style="width:26%">Format</th><th style="width:24%">Sits where</th><th>What it is for</th></tr>
+            <tr><td><b>Sachet</b></td><td>Main shelf</td><td>The daily ritual, and the format that travels in a school bag</td></tr>
+            <tr><td><b>Stick pack</b></td><td>Main shelf, register</td><td>The same serving in a narrower pack, and the cheapest way to trial the brand</td></tr>
+            <tr><td><b>Tub</b></td><td>Top of set</td><td>60+ servings for the household that has already decided. The best value per serving and the deepest ring in the aisle</td></tr>
           </table>
         </div>
         <div>
-          <div class="plate"><img src="img/mk-stalk-plate.jpg" alt="STALK sachet"><div class="cap">Concept render &middot; format study</div></div>
+          <div class="plate"><img src="img/fmt-family.jpg" alt="Sachet, stick and tub"><div class="cap">Format study &middot; unbranded</div></div>
         </div>
       </div>
       <div class="quote">
@@ -369,7 +340,7 @@ table.t tr.hi td{background:var(--aqua2); font-weight:700}
       <div class="comm">
         <div class="hd"><span>The shape it would take to market</span><span>Indicative. Nothing priced yet.</span></div>
         <div class="row">
-          <div class="c"><div class="k">Format</div><div class="v">30 sachets</div></div>
+          <div class="c"><div class="k">Formats</div><div class="v">Three</div></div>
           <div class="c"><div class="k">Position</div><div class="v">Top of set</div></div>
           <div class="c hi"><div class="k">Tier</div><div class="v">Premium</div></div>
           <div class="c"><div class="k">Repeat</div><div class="v">Monthly</div></div>
@@ -386,7 +357,28 @@ table.t tr.hi td{background:var(--aqua2); font-weight:700}
       <div class="w"><img src="img/who-stalk-4.jpg" alt=""><div class="ov"><div class="n">The growth spurt</div><div class="d">Ten and up, where most kids' brands lose the customer.</div></div></div>
     </div>
 
-    <div class="gtm">
+          <div class="win">
+        <div class="hd">Why it could win</div>
+        <div class="rows">
+          <div class="r"><div class="n">01</div><div class="t">Nobody has taken the other side</div><div class="b">Every brand in the category monetises worry. Evidence without fear is unclaimed, and it is hard to copy without dismantling your own marketing first.</div></div>
+          <div class="r"><div class="n">02</div><div class="t">It earns a decade, not a season</div><div class="b">Three age bands mean a family that starts at four is still buying at twelve. Most kids' brands lose the customer at the first growth spurt.</div></div>
+          <div class="r"><div class="n">03</div><div class="t">The moat is evidence, and we own the lab</div><div class="b">cur&iacute; can benchmark competitors dose by dose and build the claims dossier before launch. Almost nobody in this set can survive that comparison in public.</div></div>
+          <div class="r"><div class="n">04</div><div class="t">The IP can outlive the brand</div><div class="b">Proprietary developmental ingredient systems would licence into food and beverage. The brand becomes a way of owning the science, not just a label on a pouch.</div></div>
+        </div>
+      </div>
+
+      <div class="refs">
+        <div class="eyebrow q">What the category already proved</div>
+        <div class="strip">
+          <div class="r"><div class="n">NuBest &middot; Doctor Taller</div><div class="b">Parents will pay multiples of shelf price for growth and development, and they will subscribe.</div></div>
+          <div class="r"><div class="n">TrueHeight</div><div class="b">Height demand is real, and claims discipline is what separates a business from a lawsuit.</div></div>
+          <div class="r"><div class="n">SmartyPants</div><div class="b">A clear toddler, kids and teen architecture keeps a family inside one brand.</div></div>
+          <div class="r"><div class="n">Thorne</div><div class="b">The benchmark: confidence in the name before the shopper evaluates the individual SKU.</div></div>
+        </div>
+        <p class="sm" style="margin-top:9px">Take what is proven, make it better, then make it ours.</p>
+      </div>
+
+      <div class="gtm">
       <div class="hd">How we build demand into the door</div>
       <div class="rows">
         <div class="ph"><div class="k">Before</div><div class="t">Subscription, direct</div><div class="b">Launch on the Growth Pack and its wall height chart. It builds a base of parents who already know the name before it hits your shelf.</div></div>
@@ -400,7 +392,7 @@ table.t tr.hi td{background:var(--aqua2); font-weight:700}
 
 <!-- ================= 02 PLUS 1 ================= -->
 <div class="bhead" id="plus1">
-  <img src="img/mk-plus-banner.jpg" alt="">
+  <img src="img/fmt-banner.jpg" alt="">
   <div class="in">
     <div class="num">02</div>
     <div class="tx">
@@ -428,44 +420,6 @@ table.t tr.hi td{background:var(--aqua2); font-weight:700}
       <p class="sm" style="color:rgba(255,255,255,.55); margin-top:14px">Price points per the Wegmans category analysis. Market context: $8B+ globally, growing around 9% a year through 2030, with category growth running +52% year on year and +29% ahead of sports drinks. Grand View Research 2024; SPINS.</p>
     </div>
 
-    <div class="idsys">
-      <div class="top dk" style="background:linear-gradient(112deg,#F26A21,#E6167E 32%,#7B2FF7 62%,#00A3E0)">
-        <div class="lg-plus" style="border-color:#fff; color:#fff"><span>PL</span><span>1</span><span>US</span><span></span></div>
-        <div class="rt">One route, sketched to show the territory</div>
-      </div>
-      <div class="grid">
-        <div class="cell">
-          <div class="k">Colour direction</div>
-          <div class="sw">
-            <i style="background:#F26A21"></i><i style="background:#E6167E"></i><i style="background:#7B2FF7"></i>
-            <i style="background:#00A3E0"></i><i style="background:#00A551"></i><i style="background:#F5C400"></i><i style="background:#12122A"></i>
-          </div>
-          <div class="swl"><span>One gradient per occasion</span><span>Navy ink #12122A</span></div>
-          <div class="spec-t">Seven colourways that only make sense side by side. The range is the logo.</div>
-        </div>
-        <div class="cell">
-          <div class="k">Type feeling</div>
-          <div class="spec-t" style="font-family:'Archivo',sans-serif; font-weight:800; font-size:26px; letter-spacing:-.03em; color:#12122A">Archivo Black</div>
-          <div class="sm" style="margin-top:2px">Display and pack. Tight, geometric, unmissable at arm's length.</div>
-          <div class="spec-t" style="margin-top:12px"><b>Helvetica Neue</b>Nutrition panel and dosing.</div>
-        </div>
-        <div class="cell">
-          <div class="k">What the front panel must do</div>
-          <div class="panel">
-            <svg viewBox="0 0 200 92" aria-label="Front panel hierarchy">
-              <rect x="66" y="4" width="68" height="84" rx="4" fill="#F6F5F1" stroke="rgba(17,24,25,.3)"/>
-              <rect x="86" y="12" width="28" height="18" fill="none" stroke="#12122A" stroke-width="2"/>
-              <g fill="rgba(17,24,25,.42)"><rect x="80" y="36" width="40" height="3" rx="1.5"/><rect x="84" y="44" width="32" height="3" rx="1.5"/><rect x="84" y="51" width="32" height="3" rx="1.5"/><rect x="84" y="58" width="32" height="3" rx="1.5"/></g>
-              <circle cx="100" cy="70" r="7" fill="none" stroke="#0FA6B6" stroke-width="1.6"/>
-              <rect x="80" y="81" width="40" height="4" rx="2" fill="#12122A"/>
-              <g font-size="7" fill="#697376"><text x="4" y="24">Boxed mark</text><text x="4" y="49">Three electrolytes</text><text x="4" y="73">Zero sugar seal</text><text x="140" y="86">Occasion</text></g>
-            </svg>
-          </div>
-        </div>
-      </div>
-      <div class="lead"><b>Direction, not design</b><span>Nothing here is a finished identity. No wordmark, palette, pack or formulation has been designed yet. This is the brief we would give, and the territory we would defend.</span></div>
-    </div>
-
     <div class="card">
       <span class="pill">The range we would build</span>
       <div class="split">
@@ -484,7 +438,7 @@ table.t tr.hi td{background:var(--aqua2); font-weight:700}
           </table>
         </div>
         <div>
-          <div class="plate"><img src="img/mk-plus-plate.jpg" alt="A PLUS 1 stick"><div class="cap">The one brand with artwork already made</div></div>
+          <div class="plate"><img src="img/fmt-stick.jpg" alt="A stick pack"><div class="cap">Format study &middot; unbranded</div></div>
           <div class="eyebrow q" style="margin-top:16px">Where the category is going</div>
           <svg class="chart" style="margin-top:10px" viewBox="0 0 380 172" role="img" aria-label="Global electrolyte market growing from about eight billion dollars in 2024 to about thirteen point four billion in 2030">
             <path d="M8 112 L70 104 L132 95 L194 83 L256 70 L318 54 L360 38 L360 138 L8 138 Z" fill="#0FA6B6" opacity=".14"/>
@@ -522,7 +476,17 @@ table.t tr.hi td{background:var(--aqua2); font-weight:700}
       <div class="w"><img src="img/who-plus-4.jpg" alt=""><div class="ov"><div class="n">Night, and the morning after</div><div class="d">Two occasions, two facings, one very reliable shopper.</div></div></div>
     </div>
 
-    <div class="gtm">
+          <div class="win">
+        <div class="hd">Why it could win</div>
+        <div class="rows">
+          <div class="r"><div class="n">01</div><div class="t">Seven SKUs, one formula to hold</div><div class="b">The base never changes. That is seven facings and seven reasons to repeat, against a single line item in inventory.</div></div>
+          <div class="r"><div class="n">02</div><div class="t">Occasions never run out; flavours do</div><div class="b">A flavour range exhausts itself in three years. An occasion range extends forever: exam week, long haul, the first day back, the last night of a holiday.</div></div>
+          <div class="r"><div class="n">03</div><div class="t">Every unit is its own sample</div><div class="b">A stick is small enough to hand to a stranger. No other format in the category can seed itself this cheaply.</div></div>
+          <div class="r"><div class="n">04</div><div class="t">People complete sets</div><div class="b">Seven colourways that only make sense side by side. Collecting is a repeat mechanic that costs nothing to build.</div></div>
+        </div>
+      </div>
+
+      <div class="gtm">
       <div class="hd">How we build demand into the door</div>
       <div class="rows">
         <div class="ph"><div class="k">Before</div><div class="t">Sell the whole row</div><div class="b">Launch direct with all seven together. Nobody knows which Plus One is theirs until they try the row, and that discovery is what makes the repeat.</div></div>
@@ -563,43 +527,6 @@ table.t tr.hi td{background:var(--aqua2); font-weight:700}
       </div>
     </div>
 
-    <div class="idsys">
-      <div class="top" style="background:#EDE7DC">
-        <div class="lg-carry">CARRY</div>
-        <div class="rt">One route, sketched to show the territory</div>
-      </div>
-      <div class="grid">
-        <div class="cell">
-          <div class="k">Colour direction</div>
-          <div class="sw">
-            <i style="background:#F2EDE3"></i><i style="background:#D9CDBB"></i><i style="background:#A9603C"></i>
-            <i style="background:#6E777A"></i><i style="background:#4A5233"></i><i style="background:#1C1C1A"></i>
-          </div>
-          <div class="swl"><span>#F2EDE3</span><span>#D9CDBB</span><span>#A9603C</span><span>#6E777A</span><span>#4A5233</span><span>#1C1C1A</span></div>
-          <div class="spec-t">Bone, clay, slate, olive, ink. Five colours you would leave out on a kitchen counter.</div>
-        </div>
-        <div class="cell">
-          <div class="k">Type feeling</div>
-          <div class="spec-t" style="font-family:var(--sans); font-size:20px; letter-spacing:.38em; color:#211D16">HELVETICA</div>
-          <div class="sm" style="margin-top:4px">One typeface, two weights, very wide tracking. The restraint is the whole identity.</div>
-          <div class="spec-t" style="margin-top:12px"><b>No second face</b>Nothing decorative anywhere in the system.</div>
-        </div>
-        <div class="cell">
-          <div class="k">What the front panel must do</div>
-          <div class="panel">
-            <svg viewBox="0 0 200 92" aria-label="Sachet front panel hierarchy">
-              <rect x="58" y="14" width="84" height="64" rx="5" fill="#F2EDE3" stroke="rgba(17,24,25,.3)"/>
-              <path d="M58 20 h84" stroke="rgba(17,24,25,.25)" stroke-dasharray="3 3"/>
-              <g fill="rgba(17,24,25,.5)"><rect x="68" y="30" width="30" height="3.5" rx="1.75"/><rect x="68" y="39" width="18" height="3" rx="1.5"/></g>
-              <rect x="68" y="62" width="24" height="3" rx="1.5" fill="rgba(17,24,25,.28)"/>
-              <g font-size="7" fill="#697376"><text x="4" y="24">Tear strip</text><text x="4" y="35">Wordmark</text><text x="4" y="45">Flavour</text><text x="150" y="66">Protein figure</text></g>
-            </svg>
-          </div>
-        </div>
-      </div>
-      <div class="lead"><b>Direction, not design</b><span>Nothing here is a finished identity. No wordmark, palette, pack or formulation has been designed yet. This is the brief we would give, and the territory we would defend.</span></div>
-    </div>
-
     <div class="card">
       <span class="pill">The range we would build</span>
       <div class="split">
@@ -616,7 +543,7 @@ table.t tr.hi td{background:var(--aqua2); font-weight:700}
           </table>
         </div>
         <div>
-          <div class="plate"><img src="img/mk-carry-plate.jpg" alt="A CARRY sachet"><div class="cap">Concept render &middot; format study</div></div>
+          <div class="plate"><img src="img/mk-carry-plate.jpg" alt="A CARRY sachet"><div class="cap">Format study &middot; unbranded</div></div>
         </div>
       </div>
       <div class="quote">
@@ -643,7 +570,17 @@ table.t tr.hi td{background:var(--aqua2); font-weight:700}
       <div class="w"><img src="img/who-carry-4.jpg" alt=""><div class="ov"><div class="n">Three in the afternoon</div><div class="d">The desk-drawer serving, and the impulse buy behind it.</div></div></div>
     </div>
 
-    <div class="gtm">
+          <div class="win">
+        <div class="hd">Why it could win</div>
+        <div class="rows">
+          <div class="r"><div class="n">01</div><div class="t">It competes with nothing</div><div class="b">A shelf position that does not exist has no incumbent, no price war and no share to take. It only adds.</div></div>
+          <div class="r"><div class="n">02</div><div class="t">Three zones from one SKU</div><div class="b">Register, travel bay and main shelf. Very few products in the store can be merchandised in three places without confusing the shopper.</div></div>
+          <div class="r"><div class="n">03</div><div class="t">It makes protein legible per serving</div><div class="b">Tubs hide the maths. A sachet is the first format where a shopper can compare protein the way they compare coffee pods.</div></div>
+          <div class="r"><div class="n">04</div><div class="t">It reaches channels a tub cannot</div><div class="b">Hotels, airlines, offices and gym desks are all closed to a two-kilo tub and open to a flat sachet.</div></div>
+        </div>
+      </div>
+
+      <div class="gtm">
       <div class="hd">How we build demand into the door</div>
       <div class="rows">
         <div class="ph"><div class="k">Before</div><div class="t">The bowl by the door</div><div class="b">Sell a 30-count direct on one image: a bowl of sachets next to the keys. The habit is the product, and it builds the shopper before the listing.</div></div>
@@ -657,7 +594,7 @@ table.t tr.hi td{background:var(--aqua2); font-weight:700}
 
 <!-- ================= 04 MERO MERO ================= -->
 <div class="bhead" id="mero">
-  <img src="img/mk-mero-banner.jpg" alt="">
+  <img src="img/ref-posters.jpg" alt="">
   <div class="in">
     <div class="num">04</div>
     <div class="tx">
@@ -684,45 +621,6 @@ table.t tr.hi td{background:var(--aqua2); font-weight:700}
       </div>
     </div>
 
-    <div class="idsys">
-      <div class="top dk" style="background:#8E1A21">
-        <div class="lg-mero">MERO<br>MERO</div>
-        <div class="rt">One route, sketched to show the territory</div>
-      </div>
-      <div class="grid">
-        <div class="cell">
-          <div class="k">Colour direction</div>
-          <div class="sw">
-            <i style="background:#B4232B"></i><i style="background:#F2A81D"></i><i style="background:#157A4E"></i>
-            <i style="background:#1B4F9C"></i><i style="background:#E8388A"></i><i style="background:#E4610F"></i>
-          </div>
-          <div class="swl"><span>#B4232B</span><span>#F2A81D</span><span>#157A4E</span><span>#1B4F9C</span><span>#E8388A</span><span>#E4610F</span></div>
-          <div class="spec-t">One saturated colour per flavour, straight off a loteria card. No tints, no gradients, no pastel.</div>
-        </div>
-        <div class="cell">
-          <div class="k">Type feeling</div>
-          <div class="spec-t" style="font-family:'Alfa Slab One',Georgia,serif; font-size:24px; color:#B4232B; letter-spacing:.01em">Alfa Slab One</div>
-          <div class="sm" style="margin-top:4px">Display. Poster slab, set tight and stacked, always inside a rule.</div>
-          <div class="spec-t" style="margin-top:12px"><b>Helvetica Neue</b>Flavour names and the panel.</div>
-        </div>
-        <div class="cell">
-          <div class="k">What the front panel must do</div>
-          <div class="panel">
-            <svg viewBox="0 0 200 92" aria-label="Loteria card front panel hierarchy">
-              <rect x="72" y="6" width="56" height="80" rx="3" fill="#B4232B"/>
-              <rect x="77" y="11" width="46" height="70" rx="2" fill="none" stroke="#F2A81D" stroke-width="2"/>
-              <rect x="81" y="15" width="38" height="62" rx="1" fill="none" stroke="#F2A81D" stroke-width=".8"/>
-              <g fill="#FFF3E2"><rect x="86" y="21" width="28" height="4" rx="2"/><rect x="88" y="28" width="24" height="4" rx="2"/></g>
-              <circle cx="100" cy="50" r="12" fill="#F2A81D" opacity=".9"/>
-              <rect x="86" y="70" width="28" height="3" rx="1.5" fill="#FFF3E2"/>
-              <g font-size="7" fill="#697376"><text x="4" y="26">Stacked wordmark</text><text x="4" y="54">Folk illustration</text><text x="4" y="74">Flavour name</text><text x="140" y="16">Double rule</text></g>
-            </svg>
-          </div>
-        </div>
-      </div>
-      <div class="lead"><b>Direction, not design</b><span>Nothing here is a finished identity. No wordmark, palette, pack or formulation has been designed yet. This is the brief we would give, and the territory we would defend.</span></div>
-    </div>
-
     <div class="card">
       <span class="pill">The range we would build</span>
       <div class="split">
@@ -740,7 +638,7 @@ table.t tr.hi td{background:var(--aqua2); font-weight:700}
           </table>
         </div>
         <div>
-          <div class="plate"><img src="img/mk-mero-plate.jpg" alt="A Mero Mero stick"><div class="cap">Concept render &middot; territory study</div></div>
+          <div class="plate"><img src="img/fmt-stick.jpg" alt="A stick pack"><div class="cap">Format study &middot; unbranded</div></div>
           <div class="plate" style="margin-top:14px"><img src="img/mero-posters.jpg" alt="Loteria and lucha libre posters"><div class="cap">Reference imagery &middot; the world we would brief into</div></div>
         </div>
       </div>
@@ -768,7 +666,27 @@ table.t tr.hi td{background:var(--aqua2); font-weight:700}
       <div class="w"><img src="img/who-mero-4.jpg" alt=""><div class="ov"><div class="n">The kitchen table</div><div class="d">Limes, hot sauce, too many people. Where the palate was formed.</div></div></div>
     </div>
 
-    <div class="gtm">
+          <div class="win">
+        <div class="hd">Why it could win</div>
+        <div class="rows">
+          <div class="r"><div class="n">01</div><div class="t">Flavour is the moat, and we own the lab</div><div class="b">Most brands rent flavour from a house and wait in a queue. We hold 1,000+ in rotation and develop on site, so the range can move as fast as the culture does.</div></div>
+          <div class="r"><div class="n">02</div><div class="t">No education cost</div><div class="b">The shopper already buys these flavours in another aisle. Nothing has to be explained, which is the most expensive thing a new brand usually has to pay for.</div></div>
+          <div class="r"><div class="n">03</div><div class="t">It recruits the shopper the set is missing</div><div class="b">Functional skews older. This is a reason for someone under thirty to walk down the aisle at all.</div></div>
+          <div class="r"><div class="n">04</div><div class="t">It travels without paid media</div><div class="b">A first taste of chamoy on camera is the advertisement. The product does the marketing, which is rare and cheap.</div></div>
+        </div>
+      </div>
+
+      <div class="refs">
+        <div class="eyebrow q">The reference world</div>
+        <div class="strip">
+          <div class="r"><div class="n">Loter&iacute;a cards</div><div class="b">Flat saturated colour, ornate symmetrical borders, one illustration per card.</div></div>
+          <div class="r"><div class="n">Lucha libre posters</div><div class="b">Bold condensed type, stacked and set tight, always inside a rule.</div></div>
+          <div class="r"><div class="n">The corner shop</div><div class="b">Where tamarindo, chamoy and mango con chile have sold for decades already.</div></div>
+          <div class="r"><div class="n">Agua fresca</div><div class="b">Jamaica and horchata as everyday drinks, not novelty flavours.</div></div>
+        </div>
+      </div>
+
+      <div class="gtm">
       <div class="hd">How we build demand into the door</div>
       <div class="rows">
         <div class="ph"><div class="k">Before</div><div class="t">Sold where it is filmed</div><div class="b">Social commerce first, with creator-led drops. The first taste of chamoy on camera is the entire advertisement, and it builds the shopper before the listing.</div></div>
@@ -779,6 +697,14 @@ table.t tr.hi td{background:var(--aqua2); font-weight:700}
     <div class="jump"><a href="#carry">&larr; Back: 03 CARRY</a><a class="fwd" href="#supply">Next: 05 Supply &rarr;</a></div>
   </div>
 </section>
+
+<div class="fullbleed">
+  <img src="img/ref-chiles.jpg" alt="" style="object-position:50% 55%">
+  <div class="in">
+    <h2>None of this is a formulation problem.</h2>
+    <p>Every flavour, every format and every certification these four need already exists on one floor in Cedartown. What is being decided is not whether we can make them. It is which ones deserve to exist.</p>
+  </div>
+</div>
 
 <!-- ================= SUPPLY ================= -->
 <section class="sec alt" id="supply">
