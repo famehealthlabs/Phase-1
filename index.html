@@ -1,0 +1,866 @@
+<meta charset="utf-8">
+<title>Phase One</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Archivo:wght@400;600;800&family=Fraunces:opsz,wght@9..144,300;9..144,500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --paper:#FFFFFF; --paper2:#FAFAF8; --cream:#F6F3EC; --plate:#F3F1EA;
+  --aqua:#D4F3F1; --aqua2:#E9FBF9;
+  --ink:#111819; --ink70:#394446; --muted:#697376;
+  --teal:#0FA6B6; --teald:#0B7E88;
+  --rules:rgba(17,24,25,.16);
+  --maxw:1240px; --gut:clamp(16px,3.4vw,44px);
+  --sans:"Helvetica Neue", Helvetica, "Segoe UI", Arial, sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0; background:var(--paper2); color:var(--ink); font-family:var(--sans);
+  -webkit-font-smoothing:antialiased; line-height:1.5}
+img{max-width:100%; display:block}
+h1,h2,h3,h4,p,figure,ul{margin:0}
+ul{padding:0; list-style:none}
+a{color:inherit}
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 var(--gut)}
+
+.nav{position:sticky; top:0; z-index:60; background:rgba(250,250,248,.95);
+  backdrop-filter:blur(10px); border-bottom:1px solid var(--rules)}
+.nav .in{max-width:var(--maxw); margin:0 auto; padding:9px var(--gut); display:flex; align-items:center; gap:8px; flex-wrap:wrap}
+.nav .mk{width:22px; height:22px; flex:0 0 auto}
+.nav a{display:inline-flex; align-items:baseline; gap:6px; text-decoration:none; font-size:12px;
+  color:var(--ink70); padding:5px 11px; border-radius:999px}
+.nav a i{font-style:normal; color:var(--teal); font-size:10.5px; letter-spacing:.08em}
+.nav a:hover{background:rgba(17,24,25,.05)}
+.nav a[aria-current="true"]{background:var(--ink); color:#fff}
+.nav a[aria-current="true"] i{color:var(--aqua)}
+
+.eyebrow{font-size:10.5px; letter-spacing:.18em; text-transform:uppercase; color:var(--teald); font-weight:700}
+.eyebrow.q{color:var(--muted)}
+.h1{font-size:clamp(31px,4.8vw,56px); line-height:1.02; letter-spacing:-.034em; font-weight:700}
+.h2{font-size:clamp(23px,2.9vw,33px); line-height:1.06; letter-spacing:-.028em; font-weight:700}
+.h3{font-size:clamp(17px,1.8vw,22px); line-height:1.15; letter-spacing:-.022em; font-weight:700}
+.lede{font-size:clamp(15px,1.35vw,17px); line-height:1.5; color:var(--ink70)}
+.p{font-size:14.5px; line-height:1.62; color:var(--ink70)}
+.p+.p{margin-top:11px}
+.sm{font-size:12.5px; line-height:1.55; color:var(--muted)}
+.band{display:flex; align-items:center; gap:14px; margin:26px 0 14px}
+.band .ln{flex:1; height:1px; background:var(--rules)}
+.chips{display:flex; flex-wrap:wrap; gap:7px}
+.chip{border:1px solid var(--rules); border-radius:3px; padding:6px 10px; font-size:11.5px; color:var(--ink70); background:var(--paper); white-space:nowrap}
+
+.cover{padding:34px 0 40px; border-bottom:1px solid var(--rules)}
+.lock{display:flex; align-items:center; gap:12px}
+.lock .mk{width:38px; height:38px}
+.lock .nm{font-size:15px; font-weight:700; letter-spacing:-.01em}
+.lock .tg{font-size:11.5px; color:var(--muted)}
+.cover-grid{display:grid; grid-template-columns:1.25fr 1fr; gap:clamp(20px,4vw,56px); align-items:end}
+
+.sec{padding:clamp(34px,5vw,58px) 0; border-bottom:1px solid var(--rules)}
+.sec.alt{background:var(--cream)}
+
+.cardgrid{display:grid; grid-template-columns:repeat(4,1fr); margin-top:22px; border:1px solid var(--rules); border-radius:4px; overflow:hidden}
+.cg{position:relative; aspect-ratio:4/5; overflow:hidden}
+.cg img{width:100%; height:100%; object-fit:cover}
+.cg .ov{position:absolute; inset:0; display:flex; flex-direction:column; justify-content:flex-end; padding:17px;
+  background:linear-gradient(180deg,rgba(0,0,0,.05) 30%,rgba(0,0,0,.44) 62%,rgba(0,0,0,.86) 100%)}
+.cg .eyebrow{color:var(--aqua)}
+.cg .nm{color:#fff; font-size:19px; font-weight:700; letter-spacing:-.02em; margin-top:5px}
+.cg .ds{color:rgba(255,255,255,.88); font-size:12.5px; font-style:italic; margin-top:4px; line-height:1.4}
+
+.bhead{position:relative; min-height:clamp(200px,26vw,320px); display:flex; align-items:center; overflow:hidden}
+.bhead img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover}
+.bhead::after{content:""; position:absolute; inset:0;
+  background:linear-gradient(90deg,rgba(9,14,15,.94) 0%,rgba(9,14,15,.78) 42%,rgba(9,14,15,.3) 74%,rgba(9,14,15,.05) 100%)}
+.bhead .in{position:relative; z-index:2; width:100%; max-width:var(--maxw); margin:0 auto; padding:28px var(--gut);
+  display:flex; align-items:baseline; gap:clamp(14px,2.4vw,30px)}
+.bhead .num{font-size:clamp(30px,4.4vw,54px); font-weight:700; letter-spacing:-.03em; color:var(--teal); line-height:1}
+.bhead .tx .eyebrow{color:var(--aqua)}
+.bhead .tx h2{color:#fff; font-size:clamp(28px,4.4vw,52px); font-weight:700; letter-spacing:-.032em; line-height:1.02; margin-top:5px}
+.bhead .tx .ds{color:rgba(255,255,255,.86); font-style:italic; font-size:clamp(13px,1.35vw,17px); margin-top:8px; max-width:64ch}
+
+.block{padding:clamp(26px,3.6vw,42px) 0}
+.card{border:1px solid var(--rules); border-radius:5px; padding:clamp(18px,2.4vw,28px); background:var(--paper)}
+.card+.card{margin-top:16px}
+.card.gap{background:var(--ink); color:#fff; border-color:var(--ink)}
+.card.gap .p{color:rgba(255,255,255,.82)}
+.card.gap .eyebrow{color:var(--aqua)}
+.card.gap .h2{color:#fff}
+.card.warm{background:var(--cream)}
+.pill{background:var(--ink); color:#fff; border-radius:999px; padding:5px 13px; font-size:10.5px;
+  letter-spacing:.16em; text-transform:uppercase; font-weight:700; display:inline-block}
+.split{display:grid; grid-template-columns:1.5fr 1fr; gap:clamp(18px,2.6vw,32px); margin-top:18px; align-items:start}
+.split.even{grid-template-columns:1fr 1fr}
+.split>*{min-width:0}
+
+table.t{width:100%; border-collapse:collapse; font-size:13.5px; background:var(--paper)}
+table.t th{background:var(--aqua); text-align:left; font-size:10.5px; letter-spacing:.14em; text-transform:uppercase;
+  font-weight:700; padding:9px 11px; border:1px solid var(--rules)}
+table.t td{padding:9px 11px; border:1px solid var(--rules); vertical-align:top; line-height:1.45}
+table.t tr.hi td{background:var(--aqua2); font-weight:700}
+.plate{background:var(--plate); border:1px solid var(--rules); border-radius:4px; overflow:hidden}
+.plate img{width:100%; height:auto}
+.plate .cap{border-top:1px solid var(--rules); padding:8px 11px; font-size:10.5px; letter-spacing:.13em;
+  text-transform:uppercase; color:var(--muted); background:var(--paper)}
+
+/* ---------- identity system spread ---------- */
+.idsys{border:1px solid var(--rules); border-radius:5px; overflow:hidden; margin-top:16px; background:var(--paper)}
+.idsys .top{padding:clamp(22px,3.4vw,42px); display:grid; place-items:center; min-height:190px; position:relative}
+.idsys .top .rt{position:absolute; left:14px; bottom:12px; font-size:10px; letter-spacing:.16em;
+  text-transform:uppercase; color:rgba(17,24,25,.42)}
+.idsys .top.dk .rt{color:rgba(255,255,255,.5)}
+.idsys .lead{padding:13px 18px; border-top:1px solid var(--rules); background:var(--cream);
+  font-size:12.5px; color:var(--muted); display:flex; gap:12px; align-items:baseline; flex-wrap:wrap}
+.idsys .lead b{color:var(--ink); font-size:10.5px; letter-spacing:.16em; text-transform:uppercase}
+.idsys .grid{display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid var(--rules)}
+.idsys .cell{padding:16px 18px; border-right:1px solid var(--rules)}
+.idsys .cell:last-child{border-right:0}
+.idsys .cell .k{font-size:10.5px; letter-spacing:.15em; text-transform:uppercase; color:var(--muted); font-weight:700}
+.sw{display:flex; margin-top:10px; border:1px solid var(--rules); border-radius:3px; overflow:hidden}
+.sw i{flex:1; height:40px; display:block}
+.swl{display:flex; flex-wrap:wrap; gap:4px 12px; margin-top:8px; font-size:10.5px; color:var(--muted); letter-spacing:.04em}
+.spec-t{margin-top:10px; font-size:13px; color:var(--ink70); line-height:1.5}
+.spec-t b{display:block; font-size:15px; color:var(--ink); letter-spacing:-.01em}
+.panel{margin-top:10px}
+.panel svg{width:100%; height:auto; display:block}
+
+/* brand logotypes */
+.lg-stalk{font-family:"Fraunces",Georgia,serif; font-weight:500; font-size:clamp(38px,6vw,74px);
+  letter-spacing:.06em; color:#24503A; line-height:1; display:flex; align-items:center; gap:.18em}
+.lg-stalk .bars{display:inline-flex; flex-direction:column; gap:4px}
+.lg-stalk .bars i{display:block; width:5px; height:9px; background:#24503A; border-radius:1px}
+.lg-plus{display:inline-grid; grid-template-columns:auto auto; gap:0 .06em; border:4px solid #12122A; padding:.16em .2em;
+  font-family:"Archivo",sans-serif; font-weight:800; font-size:clamp(26px,4vw,50px); line-height:.92; color:#12122A; letter-spacing:-.03em}
+.lg-carry{font-family:var(--sans); font-weight:400; font-size:clamp(24px,3.4vw,42px);
+  letter-spacing:.42em; color:#211D16; text-indent:.42em}
+.lg-mero{font-family:"Alfa Slab One",Georgia,serif; font-size:clamp(28px,4.2vw,52px); line-height:.94; color:#FFF3E2;
+  text-align:center; letter-spacing:.01em; background:#B4232B; border:3px solid #F2A81D; outline:3px solid #B4232B;
+  padding:.3em .6em; box-shadow:0 0 0 6px #F2A81D}
+
+.who{display:grid; grid-template-columns:1fr 1fr; margin-top:14px; border:1px solid var(--rules); border-radius:4px; overflow:hidden}
+.who .w{position:relative; aspect-ratio:16/9; overflow:hidden}
+.who .w img{width:100%; height:100%; object-fit:cover}
+.who .w .ov{position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center;
+  text-align:center; padding:18px; background:rgba(9,14,15,.44)}
+.who .w .n{color:#fff; font-size:clamp(16px,1.8vw,21px); font-weight:700; letter-spacing:-.02em}
+.who .w .d{color:rgba(255,255,255,.9); font-size:12.5px; font-style:italic; margin-top:5px; line-height:1.4; max-width:26ch}
+
+.quote{border:1px solid rgba(15,166,182,.34); border-left:3px solid var(--teal); border-radius:3px;
+  background:var(--aqua2); padding:16px 18px; margin-top:16px}
+.quote q{font-size:clamp(16px,1.9vw,21px); font-style:italic; letter-spacing:-.014em; line-height:1.35; display:block}
+.quote .eyebrow{margin-top:9px; display:block}
+
+.comm{margin-top:16px; border:1px solid var(--rules); border-radius:4px; overflow:hidden; background:var(--paper)}
+.comm .hd{background:var(--ink); color:#fff; padding:10px 13px; font-size:10.5px; letter-spacing:.16em; text-transform:uppercase; font-weight:700;
+  display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap}
+.comm .hd span:last-child{color:rgba(255,255,255,.58); letter-spacing:.1em}
+.comm .row{display:grid; grid-template-columns:repeat(5,1fr)}
+.comm .c{padding:12px 13px; border-right:1px solid var(--rules); border-top:1px solid var(--rules)}
+.comm .c:last-child{border-right:0}
+.comm .c.hi{background:var(--aqua2)}
+.comm .k{font-size:10.5px; letter-spacing:.13em; text-transform:uppercase; color:var(--muted)}
+.comm .v{font-size:16px; font-weight:700; margin-top:4px; letter-spacing:-.015em}
+
+.gtm{margin-top:16px; border:1px solid var(--rules); border-radius:4px; overflow:hidden; background:var(--paper)}
+.gtm .hd{background:var(--ink); color:#fff; padding:10px 13px; font-size:10.5px; letter-spacing:.16em; text-transform:uppercase; font-weight:700}
+.gtm .rows{display:grid; grid-template-columns:repeat(3,1fr)}
+.gtm .ph{padding:15px 14px; border-right:1px solid var(--rules)}
+.gtm .ph:last-child{border-right:0}
+.gtm .ph .k{font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--teald); font-weight:700}
+.gtm .ph .t{font-size:15.5px; font-weight:700; letter-spacing:-.014em; margin-top:5px}
+.gtm .ph .b{font-size:13px; color:var(--ink70); line-height:1.55; margin-top:6px}
+
+.jump{display:flex; justify-content:space-between; gap:12px; margin-top:22px; flex-wrap:wrap}
+.jump a{text-decoration:none; border:1px solid var(--rules); border-radius:999px; padding:9px 16px; font-size:11px;
+  letter-spacing:.14em; text-transform:uppercase; font-weight:700; color:var(--ink70)}
+.jump a.fwd{background:var(--ink); color:#fff; border-color:var(--ink)}
+
+.chart{width:100%; height:auto; display:block; overflow:visible}
+.seq{margin-top:22px; border:1px solid var(--rules); border-radius:4px; overflow:hidden; background:var(--paper)}
+.seq .r{display:grid; grid-template-columns:96px 150px 1fr; border-top:1px solid var(--rules)}
+.seq .r:first-child{border-top:0}
+.seq .o{padding:14px 12px; font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted)}
+.seq .n{padding:14px 12px; font-weight:700; font-size:15px; color:var(--teald)}
+.seq .w{padding:14px 12px; font-size:13.5px; color:var(--ink70); border-left:1px solid var(--rules); line-height:1.55}
+.foot{padding:34px 0 60px; color:var(--muted); font-size:12.5px}
+.foot .band{margin-top:0}
+
+@media (max-width:900px){
+  .cover-grid{grid-template-columns:1fr; align-items:start}
+  .cardgrid{grid-template-columns:1fr 1fr}
+  .split,.split.even{grid-template-columns:1fr}
+  .idsys .grid{grid-template-columns:1fr}
+  .idsys .cell{border-right:0; border-bottom:1px solid var(--rules)}
+  .comm .row{grid-template-columns:1fr 1fr}
+  .gtm .rows{grid-template-columns:1fr}
+  .gtm .ph{border-right:0; border-bottom:1px solid var(--rules)}
+  .seq .r{grid-template-columns:80px 1fr}
+  .seq .w{grid-column:1 / -1; border-left:0; border-top:1px solid var(--rules)}
+  .nav a{padding:5px 8px; font-size:11.5px}
+}
+@media (max-width:560px){ .cardgrid{grid-template-columns:1fr} .who{grid-template-columns:1fr} }
+@media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto} }
+</style>
+
+<nav class="nav">
+  <div class="in">
+    <svg class="mk" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18.5" fill="none" stroke="#111819" stroke-width="1.4"/><rect x="12" y="12" width="16" height="16" fill="none" stroke="#111819" stroke-width="1.4"/></svg>
+    <a href="#overview"><i>00</i> The four gaps</a>
+    <a href="#stalk"><i>01</i> STALK</a>
+    <a href="#plus1"><i>02</i> PLUS 1</a>
+    <a href="#carry"><i>03</i> CARRY</a>
+    <a href="#mero"><i>04</i> Mero Mero</a>
+    <a href="#supply"><i>05</i> Supply</a>
+  </div>
+</nav>
+
+<header class="cover">
+  <div class="wrap">
+    <div class="lock">
+      <svg class="mk" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18.5" fill="none" stroke="#111819" stroke-width="1.3"/><rect x="12" y="12" width="16" height="16" fill="none" stroke="#111819" stroke-width="1.3"/></svg>
+      <div><div class="nm">F.A.M.E. Health Labs</div><div class="tg">The Nutraceutical Supply Chain. Rebuilt.</div></div>
+    </div>
+    <div class="band">
+      <span class="eyebrow">Prepared for retail partners &middot; VITE90 Phase One</span>
+      <span class="ln"></span>
+      <span class="eyebrow q">Private &amp; Confidential</span>
+    </div>
+    <div class="cover-grid">
+      <div>
+        <h1 class="h1">Four brands for four<br>gaps in your aisle.</h1>
+        <p class="lede" style="max-width:52ch; margin-top:12px">Each one is built for a shelf position that is either empty or badly served today. All four would be made on our own floor, which is why they can be on that shelf in a quarter rather than a year.</p>
+        <p class="sm" style="max-width:52ch; margin-top:14px"><b style="color:var(--ink)">What this is.</b> Four ideas we believe in, and the case for each. No branding, packaging or formulation has been designed yet. Every image here is a concept render or reference photography, made to show the territory rather than to show the product.</p>
+      </div>
+      <div>
+        <div class="eyebrow q" style="margin-bottom:9px">What sits behind every one of them</div>
+        <div class="chips">
+          <span class="chip">800+ stock formulas</span>
+          <span class="chip">1,000+ flavours</span>
+          <span class="chip">400M+ sticks a year</span>
+          <span class="chip">50K+ sachets a day</span>
+          <span class="chip">ISO 17025 lab on site</span>
+          <span class="chip">FDA registered &middot; cGMP</span>
+          <span class="chip">SQF &middot; NSF &middot; Halal &middot; Kosher</span>
+        </div>
+      </div>
+    </div>
+    <div class="band" style="margin-bottom:0">
+      <span class="eyebrow q">Four weeks to shipment on 30,000+ units, against a 12&ndash;16 week industry norm</span>
+      <span class="ln"></span>
+      <span class="eyebrow q">August 2026</span>
+    </div>
+  </div>
+</header>
+
+<section class="sec" id="overview">
+  <div class="wrap">
+    <div class="eyebrow">The four gaps</div>
+    <h2 class="h2" style="margin-top:8px">Every one of these is a shelf position, not a product idea</h2>
+    <p class="p" style="margin-top:8px; max-width:74ch">We did not start with four brands and look for room. We started with four places on a shelf where the assortment is either missing a tier, missing a format, or missing a shopper, and built the brand that fills it.</p>
+
+    <div class="cardgrid">
+      <div class="cg"><img src="img/stalk-packs.jpg" alt="STALK">
+        <div class="ov"><div class="eyebrow">01 &middot; Kids</div><div class="nm">STALK</div><div class="ds">The premium tier the kids' set does not have.</div></div></div>
+      <div class="cg"><img src="img/plus1-hero.jpg" alt="PLUS 1">
+        <div class="ov"><div class="eyebrow">02 &middot; Hydration</div><div class="nm">PLUS 1</div><div class="ds">A system that sells three units, not one.</div></div></div>
+      <div class="cg"><img src="img/carry-sachets.jpg" alt="CARRY">
+        <div class="ov"><div class="eyebrow">03 &middot; Protein</div><div class="nm">CARRY</div><div class="ds">The single-serve format protein has never had.</div></div></div>
+      <div class="cg"><img src="img/mero-lineup.jpg" alt="Mero Mero">
+        <div class="ov"><div class="eyebrow">04 &middot; Flavour</div><div class="nm">Mero Mero</div><div class="ds">The palate of every shopper under thirty.</div></div></div>
+    </div>
+
+    <table class="t" style="margin-top:22px">
+      <tr><th style="width:15%">Brand</th><th style="width:26%">The gap it fills</th><th style="width:23%">What it displaces</th><th>Why it earns its facing</th></tr>
+      <tr><td><b>STALK</b></td><td>No premium tier above the gummy set</td><td>Nothing. It sits above the set</td><td>Raises the ring in the lowest-ticket aisle in the store</td></tr>
+      <tr><td><b>PLUS 1</b></td><td>Hydration merchandised as flavours, never as a system</td><td>Slow single-flavour SKUs</td><td>The unit of purchase is the set, so basket size goes up</td></tr>
+      <tr><td><b>CARRY</b></td><td>No single-serve powder anywhere in protein</td><td>Nothing. It opens a new zone</td><td>Puts protein at the register and in travel for the first time</td></tr>
+      <tr><td><b>Mero Mero</b></td><td>Functional flavour is berry and citrus; the shopper is not</td><td>The fourth berry SKU</td><td>Brings an under-30 shopper into a set that skews older</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- ================= 01 STALK ================= -->
+<div class="bhead" id="stalk">
+  <img src="img/stalk-height.jpg" alt="" style="object-position:50% 30%">
+  <div class="in">
+    <div class="num">01</div>
+    <div class="tx">
+      <div class="eyebrow">Kids &middot; the premium tier</div>
+      <h2>STALK</h2>
+      <div class="ds">A parent who spends forty dollars on their child's shampoo walks into the vitamin aisle and finds nothing above sixteen. That is not a preference. That is an assortment gap.</div>
+    </div>
+  </div>
+</div>
+
+<section class="block">
+  <div class="wrap">
+    <div class="card gap">
+      <div class="eyebrow">The gap</div>
+      <h3 class="h2" style="margin-top:10px; max-width:26ch">The kids' set has no top shelf.</h3>
+      <div class="split" style="margin-top:16px">
+        <div>
+          <p class="p">Walk the children's supplement set and it is gummies, sugar and cartoon characters, almost all of it clustered in one narrow price band. There is a value tier and a middle. There is no premium tier at all, in an aisle where the shopper is a parent making a decision about their own child.</p>
+          <p class="p">The demand for something better is already proven, and it is all going somewhere else. NuBest, Doctor Taller and TrueHeight sell growth and development products at multiples of the shelf price, direct to consumer, on worry. None of them is on a shelf you control.</p>
+        </div>
+        <div>
+          <p class="p"><b style="color:#fff">What that costs today.</b> The highest-intent shopper in the aisle, the one who would happily pay three times the average, is either buying nothing or buying it online from a brand you cannot stock.</p>
+          <p class="p">STALK would be the item that finally gives them somewhere to trade up to, and to be defensible enough that a buyer can put it at the top of the set without flinching.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="idsys">
+      <div class="top" style="background:#EDF0E8">
+        <div class="lg-stalk"><span class="bars"><i></i><i></i><i></i></span>STALK</div>
+        <div class="rt">One route, sketched to show the territory</div>
+      </div>
+      <div class="grid">
+        <div class="cell">
+          <div class="k">Colour direction</div>
+          <div class="sw">
+            <i style="background:#24503A"></i><i style="background:#5F7F63"></i><i style="background:#C3D0BC"></i>
+            <i style="background:#EDF0E8"></i><i style="background:#F7F4EC"></i><i style="background:#7A6248"></i>
+          </div>
+          <div class="swl"><span>#24503A</span><span>#5F7F63</span><span>#C3D0BC</span><span>#EDF0E8</span><span>#F7F4EC</span><span>#7A6248</span></div>
+          <div class="spec-t">Growth green through sage to bone, with a bark neutral. Nothing bright, nothing childish.</div>
+        </div>
+        <div class="cell">
+          <div class="k">Type feeling</div>
+          <div class="spec-t" style="font-family:'Fraunces',Georgia,serif; font-size:26px; letter-spacing:.02em; color:#24503A">Fraunces</div>
+          <div class="sm" style="margin-top:2px">Display. Warm, high craft, a little editorial. Reads premium without reading pharmaceutical.</div>
+          <div class="spec-t" style="margin-top:12px"><b>Helvetica Neue</b>Text and data. Plain, clinical, the counterweight.</div>
+        </div>
+        <div class="cell">
+          <div class="k">A device worth exploring</div>
+          <div class="panel">
+            <svg viewBox="0 0 200 80" aria-label="Segmented growth bars">
+              <g fill="#24503A"><rect x="10" y="52" width="7" height="18" rx="2"/><rect x="24" y="42" width="7" height="28" rx="2"/><rect x="38" y="30" width="7" height="40" rx="2"/><rect x="52" y="16" width="7" height="54" rx="2"/></g>
+              <g fill="none" stroke="#C3D0BC" stroke-width="1.5"><line x1="76" y1="70" x2="190" y2="70"/><line x1="76" y1="52" x2="190" y2="52"/><line x1="76" y1="34" x2="190" y2="34"/><line x1="76" y1="16" x2="190" y2="16"/></g>
+            </svg>
+          </div>
+          <div class="spec-t">Stacked segments from a bamboo culm. It measures without promising a number.</div>
+        </div>
+      </div>
+      <div class="lead"><b>Direction, not design</b><span>Nothing here is a finished identity. No wordmark, palette, pack or formulation has been designed yet. This is the brief we would give, and the territory we would defend.</span></div>
+    </div>
+
+    <div class="card">
+      <span class="pill">The range we would build</span>
+      <div class="split">
+        <div>
+          <h3 class="h3" style="margin-top:14px">STALK Power Packs</h3>
+          <p class="p" style="margin-top:8px">One sachet a day, torn into milk or stirred into breakfast. Three age bands so a family stays in the brand for a decade rather than a season.</p>
+          <table class="t" style="margin-top:16px">
+            <tr><th style="width:26%">Age band</th><th style="width:26%">Facings</th><th>What it is built around</th></tr>
+            <tr><td><b>Ages 2&ndash;4</b></td><td>One</td><td>The first developmental years, gender neutral, minimum sensory friction</td></tr>
+            <tr><td><b>Ages 5&ndash;9</b></td><td>Two, the hero</td><td>The core window and the volume driver</td></tr>
+            <tr><td><b>Age 10+</b></td><td>One</td><td>Adolescence, where the family trades up rather than out</td></tr>
+          </table>
+        </div>
+        <div>
+          <div class="plate"><img src="img/stalk-kit.jpg" alt="The STALK Growth Pack"><div class="cap">Concept render &middot; the subscription driver we would build</div></div>
+        </div>
+      </div>
+      <div class="quote">
+        <q>A premium child development brand built for a shelf rather than a funnel. Nobody has built one.</q>
+        <span class="eyebrow">Why it wins the shelf</span>
+      </div>
+      <div class="comm">
+        <div class="hd"><span>The shape it would take to market</span><span>Indicative. Nothing priced yet.</span></div>
+        <div class="row">
+          <div class="c"><div class="k">Format</div><div class="v">30 sachets</div></div>
+          <div class="c"><div class="k">Position</div><div class="v">Top of set</div></div>
+          <div class="c hi"><div class="k">Tier</div><div class="v">Premium</div></div>
+          <div class="c"><div class="k">Repeat</div><div class="v">Monthly</div></div>
+          <div class="c"><div class="k">Facings</div><div class="v">4</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="band"><span class="eyebrow">Who is buying it</span><span class="ln"></span></div>
+    <div class="who">
+      <div class="w"><img src="img/who-stalk-1.jpg" alt=""><div class="ov"><div class="n">The watchful parent</div><div class="d">Already comparing, already worried, and currently buying nothing in your aisle.</div></div></div>
+      <div class="w"><img src="img/who-stalk-2.jpg" alt=""><div class="ov"><div class="n">The doorframe family</div><div class="d">Growth is already a household ritual. This joins it.</div></div></div>
+      <div class="w"><img src="img/who-stalk-3.jpg" alt=""><div class="ov"><div class="n">The school years</div><div class="d">Five to nine. The widest window and the deepest basket.</div></div></div>
+      <div class="w"><img src="img/who-stalk-4.jpg" alt=""><div class="ov"><div class="n">The growth spurt</div><div class="d">Ten and up, where most kids' brands lose the customer.</div></div></div>
+    </div>
+
+    <div class="gtm">
+      <div class="hd">How we build demand into the door</div>
+      <div class="rows">
+        <div class="ph"><div class="k">Before</div><div class="t">Subscription, direct</div><div class="b">Launch on the Growth Pack and its wall height chart. It builds a base of parents who already know the name before it hits your shelf.</div></div>
+        <div class="ph"><div class="k">At launch</div><div class="t">The science, in public</div><div class="b">Publish the competitive benchmark rather than filing it. Pediatric and practitioner voices, parenting communities, and back to school.</div></div>
+        <div class="ph"><div class="k">In store</div><div class="t">Top of set, own block</div><div class="b">Merchandised as a tier, not a SKU. Four facings that read as a premium block and lift the shopper's eye above the gummies.</div></div>
+      </div>
+    </div>
+    <div class="jump"><span></span><a class="fwd" href="#plus1">Next: 02 PLUS 1 &rarr;</a></div>
+  </div>
+</section>
+
+<!-- ================= 02 PLUS 1 ================= -->
+<div class="bhead" id="plus1">
+  <img src="img/plus1-lifestyle.jpg" alt="" style="object-position:50% 26%">
+  <div class="in">
+    <div class="num">02</div>
+    <div class="tx">
+      <div class="eyebrow">Hydration &middot; the system play</div>
+      <h2>PLUS 1</h2>
+      <div class="ds">Every hydration brand on your shelf sells flavours. This one sells a week. The shopper leaves with three sticks instead of one, because they are not choosing a taste, they are choosing occasions.</div>
+    </div>
+  </div>
+</div>
+
+<section class="block">
+  <div class="wrap">
+    <div class="card gap">
+      <div class="eyebrow">The gap</div>
+      <h3 class="h2" style="margin-top:10px; max-width:30ch">The fastest-growing set in the store, merchandised like a soft drink.</h3>
+      <div class="split" style="margin-top:16px">
+        <div>
+          <p class="p">Hydration is growing faster than almost anything else you stock, and every brand in it is built the same way: one formula, four flavours, one occasion. The shopper picks a flavour, buys one box, and the repeat is whatever the flavour fatigue allows.</p>
+          <p class="p">The cult brand sits at $1.50 a stick and private label programmes land near $0.50. The whole set is competing on price inside a single occasion.</p>
+        </div>
+        <div>
+          <p class="p"><b style="color:#fff">The unclaimed position</b> is the one above flavour: a system where the occasions are the SKUs. Morning is a different purchase from Workout, which is a different purchase from Travel, and a shopper who buys the logic buys several.</p>
+          <p class="p">Seven facings that read as one block, and a basket that is three deep instead of one.</p>
+        </div>
+      </div>
+      <p class="sm" style="color:rgba(255,255,255,.55); margin-top:14px">Price points per the Wegmans category analysis. Market context: $8B+ globally, growing around 9% a year through 2030, with category growth running +52% year on year and +29% ahead of sports drinks. Grand View Research 2024; SPINS.</p>
+    </div>
+
+    <div class="idsys">
+      <div class="top dk" style="background:linear-gradient(112deg,#F26A21,#E6167E 32%,#7B2FF7 62%,#00A3E0)">
+        <div class="lg-plus" style="border-color:#fff; color:#fff"><span>PL</span><span>1</span><span>US</span><span></span></div>
+        <div class="rt">One route, sketched to show the territory</div>
+      </div>
+      <div class="grid">
+        <div class="cell">
+          <div class="k">Colour direction</div>
+          <div class="sw">
+            <i style="background:#F26A21"></i><i style="background:#E6167E"></i><i style="background:#7B2FF7"></i>
+            <i style="background:#00A3E0"></i><i style="background:#00A551"></i><i style="background:#F5C400"></i><i style="background:#12122A"></i>
+          </div>
+          <div class="swl"><span>One gradient per occasion</span><span>Navy ink #12122A</span></div>
+          <div class="spec-t">Seven colourways that only make sense side by side. The range is the logo.</div>
+        </div>
+        <div class="cell">
+          <div class="k">Type feeling</div>
+          <div class="spec-t" style="font-family:'Archivo',sans-serif; font-weight:800; font-size:26px; letter-spacing:-.03em; color:#12122A">Archivo Black</div>
+          <div class="sm" style="margin-top:2px">Display and pack. Tight, geometric, unmissable at arm's length.</div>
+          <div class="spec-t" style="margin-top:12px"><b>Helvetica Neue</b>Nutrition panel and dosing.</div>
+        </div>
+        <div class="cell">
+          <div class="k">What the front panel must do</div>
+          <div class="panel">
+            <svg viewBox="0 0 200 92" aria-label="Front panel hierarchy">
+              <rect x="66" y="4" width="68" height="84" rx="4" fill="#F6F5F1" stroke="rgba(17,24,25,.3)"/>
+              <rect x="86" y="12" width="28" height="18" fill="none" stroke="#12122A" stroke-width="2"/>
+              <g fill="rgba(17,24,25,.42)"><rect x="80" y="36" width="40" height="3" rx="1.5"/><rect x="84" y="44" width="32" height="3" rx="1.5"/><rect x="84" y="51" width="32" height="3" rx="1.5"/><rect x="84" y="58" width="32" height="3" rx="1.5"/></g>
+              <circle cx="100" cy="70" r="7" fill="none" stroke="#0FA6B6" stroke-width="1.6"/>
+              <rect x="80" y="81" width="40" height="4" rx="2" fill="#12122A"/>
+              <g font-size="7" fill="#697376"><text x="4" y="24">Boxed mark</text><text x="4" y="49">Three electrolytes</text><text x="4" y="73">Zero sugar seal</text><text x="140" y="86">Occasion</text></g>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="lead"><b>Direction, not design</b><span>Nothing here is a finished identity. No wordmark, palette, pack or formulation has been designed yet. This is the brief we would give, and the territory we would defend.</span></div>
+    </div>
+
+    <div class="card">
+      <span class="pill">The range we would build</span>
+      <div class="split">
+        <div>
+          <h3 class="h3" style="margin-top:14px">One base, seven occasions</h3>
+          <p class="p" style="margin-top:8px">1000mg sodium, 200mg potassium, 60mg magnesium and zero sugar in every stick. Only the Plus One changes, which is why seven SKUs cost one formula to hold.</p>
+          <table class="t" style="margin-top:16px">
+            <tr><th style="width:26%">Occasion</th><th style="width:26%">The promise</th><th>What stacks on top</th></tr>
+            <tr><td><b>Morning</b></td><td>Hydration + Energy</td><td>Natural caffeine, B-vitamin complex</td></tr>
+            <tr><td><b>Workout</b></td><td>Hydration + Recovery</td><td>BCAAs, creatine monohydrate, magnesium glycinate</td></tr>
+            <tr><td><b>Travel</b></td><td>Hydration + Immunity</td><td>Vitamin C 1000 mg, zinc, elderberry</td></tr>
+            <tr><td><b>Night Out</b></td><td>Hydration + Energy</td><td>B-vitamin complex, natural caffeine</td></tr>
+            <tr><td><b>Morning After</b></td><td>Hydration + Recovery</td><td>NAC, milk thistle, B-vitamins</td></tr>
+            <tr><td><b>Daily Routine</b></td><td>Hydration + Glow</td><td>Marine collagen, hyaluronic acid, biotin</td></tr>
+            <tr><td><b>Evening</b></td><td>Hydration + Calm</td><td>Magnesium glycinate, L-theanine, ashwagandha</td></tr>
+          </table>
+        </div>
+        <div>
+          <div class="plate"><img src="img/plus1-fan.jpg" alt="The seven sticks"><div class="cap">Concept render &middot; the only artwork that exists so far</div></div>
+          <div class="eyebrow q" style="margin-top:16px">Where the category is going</div>
+          <svg class="chart" style="margin-top:10px" viewBox="0 0 380 172" role="img" aria-label="Global electrolyte market growing from about eight billion dollars in 2024 to about thirteen point four billion in 2030">
+            <path d="M8 112 L70 104 L132 95 L194 83 L256 70 L318 54 L360 38 L360 138 L8 138 Z" fill="#0FA6B6" opacity=".14"/>
+            <path d="M8 112 L70 104 L132 95 L194 83 L256 70 L318 54 L360 38" fill="none" stroke="#0FA6B6" stroke-width="2.2" stroke-linejoin="round"/>
+            <circle cx="8" cy="112" r="4" fill="#0B7E88"/><circle cx="360" cy="38" r="4" fill="#0B7E88"/>
+            <text x="8" y="99" font-size="15" font-weight="700" fill="#111819">$8B</text>
+            <text x="360" y="25" font-size="15" font-weight="700" fill="#111819" text-anchor="end">$13.4B</text>
+            <line x1="8" y1="138" x2="360" y2="138" stroke="rgba(17,24,25,.2)"/>
+            <text x="8" y="154" font-size="11" fill="#697376">2024</text><text x="360" y="154" font-size="11" fill="#697376" text-anchor="end">2030</text>
+            <text x="8" y="170" font-size="10.5" fill="#697376">At the reported 9% compound rate.</text>
+          </svg>
+        </div>
+      </div>
+      <div class="quote">
+        <q>The shopper is not choosing a flavour. They are buying a week, and a week is three sticks.</q>
+        <span class="eyebrow">Why it wins the shelf</span>
+      </div>
+      <div class="comm">
+        <div class="hd"><span>The shape it would take to market</span><span>Indicative. Nothing priced yet.</span></div>
+        <div class="row">
+          <div class="c"><div class="k">Format</div><div class="v">Stick, 16g</div></div>
+          <div class="c"><div class="k">Counts</div><div class="v">6 / 30</div></div>
+          <div class="c hi"><div class="k">Position</div><div class="v">Mid tier</div></div>
+          <div class="c"><div class="k">Units per trip</div><div class="v">2 to 3</div></div>
+          <div class="c"><div class="k">Facings</div><div class="v">7</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="band"><span class="eyebrow">Who is buying it</span><span class="ln"></span></div>
+    <div class="who">
+      <div class="w"><img src="img/who-plus-1.jpg" alt=""><div class="ov"><div class="n">The 7am commute</div><div class="d">Morning is the first stick anyone buys, and the one they come back for.</div></div></div>
+      <div class="w"><img src="img/who-plus-2.jpg" alt=""><div class="ov"><div class="n">The gym floor</div><div class="d">Recovery is the highest-repeat occasion in the set.</div></div></div>
+      <div class="w"><img src="img/who-plus-3.jpg" alt=""><div class="ov"><div class="n">Terminal, gate, seat</div><div class="d">Travel is the occasion that sells the 30-count.</div></div></div>
+      <div class="w"><img src="img/who-plus-4.jpg" alt=""><div class="ov"><div class="n">Night, and the morning after</div><div class="d">Two occasions, two facings, one very reliable shopper.</div></div></div>
+    </div>
+
+    <div class="gtm">
+      <div class="hd">How we build demand into the door</div>
+      <div class="rows">
+        <div class="ph"><div class="k">Before</div><div class="t">Sell the whole row</div><div class="b">Launch direct with all seven together. Nobody knows which Plus One is theirs until they try the row, and that discovery is what makes the repeat.</div></div>
+        <div class="ph"><div class="k">At launch</div><div class="t">Sampling where the occasion lives</div><div class="b">A stick is a sample. Festivals, gyms, hotel desks and race packs put the product in the hand at the exact moment of need.</div></div>
+        <div class="ph"><div class="k">In store</div><div class="t">Block, plus register singles</div><div class="b">Seven facings merchandised as one system, with singles at the register for the occasion the shopper just remembered.</div></div>
+      </div>
+    </div>
+    <div class="jump"><a href="#stalk">&larr; Back: 01 STALK</a><a class="fwd" href="#carry">Next: 03 CARRY &rarr;</a></div>
+  </div>
+</section>
+
+<!-- ================= 03 CARRY ================= -->
+<div class="bhead" id="carry">
+  <img src="img/carry-grab.jpg" alt="" style="object-position:50% 44%">
+  <div class="in">
+    <div class="num">03</div>
+    <div class="tx">
+      <div class="eyebrow">Protein &middot; the missing format</div>
+      <h2>CARRY</h2>
+      <div class="ds">There is no protein SKU at your register. Not because shoppers do not want one, but because nobody has made protein in a format that fits there.</div>
+    </div>
+  </div>
+</div>
+
+<section class="block">
+  <div class="wrap">
+    <div class="card gap">
+      <div class="eyebrow">The gap</div>
+      <h3 class="h2" style="margin-top:10px; max-width:28ch">The biggest macro in the store, sold only in formats that need a kitchen.</h3>
+      <div class="split" style="margin-top:16px">
+        <div>
+          <p class="p">Count the protein formats you stock. Tubs, bars, ready-to-drink bottles. Every one of them either needs a scoop and a shaker, or is a chilled bottle carrying water around the country.</p>
+          <p class="p">Single-serve powder does not exist as a shelf position. That means protein has no presence at the register, none in the travel set, none in the impulse zone, and no way to be bought by a shopper who did not come in for it.</p>
+        </div>
+        <div>
+          <p class="p"><b style="color:#fff">The zone this opens.</b> A flat sachet is the only protein format that can sit at checkout, in a travel bay, in an office or hotel channel, and in a multipack on the main shelf beside the tubs.</p>
+          <p class="p">It is also the format that finally lets a shopper compare protein by the serving instead of by the tub.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="idsys">
+      <div class="top" style="background:#EDE7DC">
+        <div class="lg-carry">CARRY</div>
+        <div class="rt">One route, sketched to show the territory</div>
+      </div>
+      <div class="grid">
+        <div class="cell">
+          <div class="k">Colour direction</div>
+          <div class="sw">
+            <i style="background:#F2EDE3"></i><i style="background:#D9CDBB"></i><i style="background:#A9603C"></i>
+            <i style="background:#6E777A"></i><i style="background:#4A5233"></i><i style="background:#1C1C1A"></i>
+          </div>
+          <div class="swl"><span>#F2EDE3</span><span>#D9CDBB</span><span>#A9603C</span><span>#6E777A</span><span>#4A5233</span><span>#1C1C1A</span></div>
+          <div class="spec-t">Bone, clay, slate, olive, ink. Five colours you would leave out on a kitchen counter.</div>
+        </div>
+        <div class="cell">
+          <div class="k">Type feeling</div>
+          <div class="spec-t" style="font-family:var(--sans); font-size:20px; letter-spacing:.38em; color:#211D16">HELVETICA</div>
+          <div class="sm" style="margin-top:4px">One typeface, two weights, very wide tracking. The restraint is the whole identity.</div>
+          <div class="spec-t" style="margin-top:12px"><b>No second face</b>Nothing decorative anywhere in the system.</div>
+        </div>
+        <div class="cell">
+          <div class="k">What the front panel must do</div>
+          <div class="panel">
+            <svg viewBox="0 0 200 92" aria-label="Sachet front panel hierarchy">
+              <rect x="58" y="14" width="84" height="64" rx="5" fill="#F2EDE3" stroke="rgba(17,24,25,.3)"/>
+              <path d="M58 20 h84" stroke="rgba(17,24,25,.25)" stroke-dasharray="3 3"/>
+              <g fill="rgba(17,24,25,.5)"><rect x="68" y="30" width="30" height="3.5" rx="1.75"/><rect x="68" y="39" width="18" height="3" rx="1.5"/></g>
+              <rect x="68" y="62" width="24" height="3" rx="1.5" fill="rgba(17,24,25,.28)"/>
+              <g font-size="7" fill="#697376"><text x="4" y="24">Tear strip</text><text x="4" y="35">Wordmark</text><text x="4" y="45">Flavour</text><text x="150" y="66">Protein figure</text></g>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="lead"><b>Direction, not design</b><span>Nothing here is a finished identity. No wordmark, palette, pack or formulation has been designed yet. This is the brief we would give, and the territory we would defend.</span></div>
+    </div>
+
+    <div class="card">
+      <span class="pill">The range we would build</span>
+      <div class="split">
+        <div>
+          <h3 class="h3" style="margin-top:14px">Five SKUs, one format</h3>
+          <p class="p" style="margin-top:8px">Whey isolate across four, one plant blend to open the dairy-free shopper without needing a second brand.</p>
+          <table class="t" style="margin-top:16px">
+            <tr><th style="width:26%">SKU</th><th style="width:24%">Base</th><th>The occasion it exists for</th></tr>
+            <tr><td><b>Unflavoured</b></td><td>Whey isolate</td><td>Disappears into coffee, oats or a smoothie</td></tr>
+            <tr class="hi"><td><b>Chocolate</b></td><td>Whey isolate</td><td>The volume SKU and the first purchase</td></tr>
+            <tr><td><b>Vanilla</b></td><td>Whey isolate</td><td>The mixer, and the base the line grows from</td></tr>
+            <tr><td><b>Coffee</b></td><td>Whey isolate</td><td>The 7am serving no tub has ever been present for</td></tr>
+            <tr><td><b>Plant</b></td><td>Plant blend</td><td>Opens dairy-free without a second brand</td></tr>
+          </table>
+        </div>
+        <div>
+          <div class="plate"><img src="img/carry-sachets.jpg" alt="The CARRY line"><div class="cap">Concept render &middot; format study, not a pack design</div></div>
+        </div>
+      </div>
+      <div class="quote">
+        <q>The first protein you could put at the register, in a travel bay, and beside the tubs.</q>
+        <span class="eyebrow">Why it wins the shelf</span>
+      </div>
+      <div class="comm">
+        <div class="hd"><span>The shape it would take to market</span><span>Indicative. Nothing priced yet.</span></div>
+        <div class="row">
+          <div class="c"><div class="k">Format</div><div class="v">Flat sachet</div></div>
+          <div class="c"><div class="k">Counts</div><div class="v">1 / 12 / 30</div></div>
+          <div class="c hi"><div class="k">Zones</div><div class="v">Three</div></div>
+          <div class="c"><div class="k">Compare on</div><div class="v">Per serving</div></div>
+          <div class="c"><div class="k">Facings</div><div class="v">5 plus till</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="band"><span class="eyebrow">Who is buying it</span><span class="ln"></span></div>
+    <div class="who">
+      <div class="w"><img src="img/who-carry-1.jpg" alt=""><div class="ov"><div class="n">The 6am start</div><div class="d">Out of the door before the kitchen is an option.</div></div></div>
+      <div class="w"><img src="img/who-carry-2.jpg" alt=""><div class="ov"><div class="n">The commute</div><div class="d">Twenty minutes a tub has never been part of.</div></div></div>
+      <div class="w"><img src="img/who-carry-3.jpg" alt=""><div class="ov"><div class="n">The hotel room</div><div class="d">A kettle, a mug and no kitchen for four days.</div></div></div>
+      <div class="w"><img src="img/who-carry-4.jpg" alt=""><div class="ov"><div class="n">Three in the afternoon</div><div class="d">The desk-drawer serving, and the impulse buy behind it.</div></div></div>
+    </div>
+
+    <div class="gtm">
+      <div class="hd">How we build demand into the door</div>
+      <div class="rows">
+        <div class="ph"><div class="k">Before</div><div class="t">The bowl by the door</div><div class="b">Sell a 30-count direct on one image: a bowl of sachets next to the keys. The habit is the product, and it builds the shopper before the listing.</div></div>
+        <div class="ph"><div class="k">At launch</div><div class="t">Where kitchens are not</div><div class="b">Hotels, airport retail, gym front desks and corporate wellness. Each one proves the format in a channel with no tub competition.</div></div>
+        <div class="ph"><div class="k">In store</div><div class="t">Three zones at once</div><div class="b">Singles at the register, twelves in travel, thirties on the main shelf beside the tubs where the per-serving maths does the selling.</div></div>
+      </div>
+    </div>
+    <div class="jump"><a href="#plus1">&larr; Back: 02 PLUS 1</a><a class="fwd" href="#mero">Next: 04 Mero Mero &rarr;</a></div>
+  </div>
+</section>
+
+<!-- ================= 04 MERO MERO ================= -->
+<div class="bhead" id="mero">
+  <img src="img/mero-posters.jpg" alt="" style="object-position:50% 45%">
+  <div class="in">
+    <div class="num">04</div>
+    <div class="tx">
+      <div class="eyebrow">Flavour &middot; the missing shopper</div>
+      <h2>Mero Mero</h2>
+      <div class="ds">Your snack aisle is full of chamoy, tajin and mango con chile. Your functional aisle is berry, citrus and blue raspberry. Same shopper, same trip, two completely different assumptions about what they like.</div>
+    </div>
+  </div>
+</div>
+
+<section class="block">
+  <div class="wrap">
+    <div class="card gap">
+      <div class="eyebrow">The gap</div>
+      <h3 class="h2" style="margin-top:10px; max-width:28ch">The palate that already runs one aisle is missing from the other.</h3>
+      <div class="split" style="margin-top:16px">
+        <div>
+          <p class="p">Latin flavour stopped being regional some time ago. It is the default palate of shoppers under thirty, of every background, and your snack, candy and beverage sets already reflect that. The functional set has not moved.</p>
+          <p class="p">That is a gap with a shopper attached to it. The under-30 basket is the one the vitamin and hydration sets struggle hardest to win, and flavour is the cheapest reason to give them to walk down it.</p>
+        </div>
+        <div>
+          <p class="p"><b style="color:#fff">Why we can do it and others cannot.</b> Flavour is the whole product here, and flavour is the part of the supply chain most brands rent. We hold 1,000+ in rotation and run a flavour lab on site.</p>
+          <p class="p">Six flavours that need no explanation to the shopper who already buys them in another aisle.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="idsys">
+      <div class="top dk" style="background:#8E1A21">
+        <div class="lg-mero">MERO<br>MERO</div>
+        <div class="rt">One route, sketched to show the territory</div>
+      </div>
+      <div class="grid">
+        <div class="cell">
+          <div class="k">Colour direction</div>
+          <div class="sw">
+            <i style="background:#B4232B"></i><i style="background:#F2A81D"></i><i style="background:#157A4E"></i>
+            <i style="background:#1B4F9C"></i><i style="background:#E8388A"></i><i style="background:#E4610F"></i>
+          </div>
+          <div class="swl"><span>#B4232B</span><span>#F2A81D</span><span>#157A4E</span><span>#1B4F9C</span><span>#E8388A</span><span>#E4610F</span></div>
+          <div class="spec-t">One saturated colour per flavour, straight off a loteria card. No tints, no gradients, no pastel.</div>
+        </div>
+        <div class="cell">
+          <div class="k">Type feeling</div>
+          <div class="spec-t" style="font-family:'Alfa Slab One',Georgia,serif; font-size:24px; color:#B4232B; letter-spacing:.01em">Alfa Slab One</div>
+          <div class="sm" style="margin-top:4px">Display. Poster slab, set tight and stacked, always inside a rule.</div>
+          <div class="spec-t" style="margin-top:12px"><b>Helvetica Neue</b>Flavour names and the panel.</div>
+        </div>
+        <div class="cell">
+          <div class="k">What the front panel must do</div>
+          <div class="panel">
+            <svg viewBox="0 0 200 92" aria-label="Loteria card front panel hierarchy">
+              <rect x="72" y="6" width="56" height="80" rx="3" fill="#B4232B"/>
+              <rect x="77" y="11" width="46" height="70" rx="2" fill="none" stroke="#F2A81D" stroke-width="2"/>
+              <rect x="81" y="15" width="38" height="62" rx="1" fill="none" stroke="#F2A81D" stroke-width=".8"/>
+              <g fill="#FFF3E2"><rect x="86" y="21" width="28" height="4" rx="2"/><rect x="88" y="28" width="24" height="4" rx="2"/></g>
+              <circle cx="100" cy="50" r="12" fill="#F2A81D" opacity=".9"/>
+              <rect x="86" y="70" width="28" height="3" rx="1.5" fill="#FFF3E2"/>
+              <g font-size="7" fill="#697376"><text x="4" y="26">Stacked wordmark</text><text x="4" y="54">Folk illustration</text><text x="4" y="74">Flavour name</text><text x="140" y="16">Double rule</text></g>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="lead"><b>Direction, not design</b><span>Nothing here is a finished identity. No wordmark, palette, pack or formulation has been designed yet. This is the brief we would give, and the territory we would defend.</span></div>
+    </div>
+
+    <div class="card">
+      <span class="pill">The range we would build</span>
+      <div class="split">
+        <div>
+          <h3 class="h3" style="margin-top:14px">Six flavours, hydration first</h3>
+          <p class="p" style="margin-top:8px">Collagen and protein follow in the same six flavours, so the block grows down the aisle rather than sideways.</p>
+          <table class="t" style="margin-top:16px">
+            <tr><th style="width:28%">Flavour</th><th style="width:22%">Colourway</th><th>Why the shopper already knows it</th></tr>
+            <tr class="hi"><td><b>Mango con chile</b></td><td>Chilli red</td><td>The street-cart standard. Sweet, then heat, then lime</td></tr>
+            <tr><td><b>Tamarindo</b></td><td>Marigold</td><td>Sour, sticky, unmistakable, already in your candy set</td></tr>
+            <tr><td><b>Jamaica</b></td><td>Jade</td><td>Hibiscus. The agua fresca in your chilled aisle</td></tr>
+            <tr><td><b>Horchata</b></td><td>Cobalt</td><td>Rice and cinnamon. The comfort flavour of the set</td></tr>
+            <tr><td><b>Chamoy</b></td><td>Hot pink</td><td>Sweet, salty, sour and hot. The one that travels online</td></tr>
+            <tr><td><b>Guayaba</b></td><td>Burnt orange</td><td>Guava. The softest way in for a new drinker</td></tr>
+          </table>
+        </div>
+        <div>
+          <div class="plate"><img src="img/mero-lineup.jpg" alt="The Mero Mero range"><div class="cap">Concept render &middot; territory study, not a pack design</div></div>
+          <div class="plate" style="margin-top:14px"><img src="img/mero-posters.jpg" alt="Loteria and lucha libre posters"><div class="cap">Reference imagery &middot; the world we would brief into</div></div>
+        </div>
+      </div>
+      <div class="quote">
+        <q>The flavours are already in your store. They are just in the wrong aisle.</q>
+        <span class="eyebrow">Why it wins the shelf</span>
+      </div>
+      <div class="comm">
+        <div class="hd"><span>The shape it would take to market</span><span>Indicative. Nothing priced yet.</span></div>
+        <div class="row">
+          <div class="c"><div class="k">Format</div><div class="v">Stick, 16g</div></div>
+          <div class="c"><div class="k">Counts</div><div class="v">6 / 24</div></div>
+          <div class="c hi"><div class="k">Shopper</div><div class="v">Under 30</div></div>
+          <div class="c"><div class="k">Extends to</div><div class="v">Collagen, protein</div></div>
+          <div class="c"><div class="k">Facings</div><div class="v">6</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="band"><span class="eyebrow">Who is buying it</span><span class="ln"></span></div>
+    <div class="who">
+      <div class="w"><img src="img/who-mero-1.jpg" alt=""><div class="ov"><div class="n">The pregame</div><div class="d">Where the night is decided, and where it gets filmed.</div></div></div>
+      <div class="w"><img src="img/who-mero-2.jpg" alt=""><div class="ov"><div class="n">The festival</div><div class="d">Forty thousand people who all know these flavours already.</div></div></div>
+      <div class="w"><img src="img/who-mero-3.jpg" alt=""><div class="ov"><div class="n">The corner shop</div><div class="d">The aisle where these flavours have always sold.</div></div></div>
+      <div class="w"><img src="img/who-mero-4.jpg" alt=""><div class="ov"><div class="n">The kitchen table</div><div class="d">Limes, hot sauce, too many people. Where the palate was formed.</div></div></div>
+    </div>
+
+    <div class="gtm">
+      <div class="hd">How we build demand into the door</div>
+      <div class="rows">
+        <div class="ph"><div class="k">Before</div><div class="t">Sold where it is filmed</div><div class="b">Social commerce first, with creator-led drops. The first taste of chamoy on camera is the entire advertisement, and it builds the shopper before the listing.</div></div>
+        <div class="ph"><div class="k">At launch</div><div class="t">Inside the culture</div><div class="b">Music, food creators and festival partnerships, with Latin founders and a culinary partner named on the brand.</div></div>
+        <div class="ph"><div class="k">In store</div><div class="t">A colour block, not a row</div><div class="b">Six saturated facings that stop a shopper who was walking past. Secondary placement next to the flavours they already buy.</div></div>
+      </div>
+    </div>
+    <div class="jump"><a href="#carry">&larr; Back: 03 CARRY</a><a class="fwd" href="#supply">Next: 05 Supply &rarr;</a></div>
+  </div>
+</section>
+
+<!-- ================= SUPPLY ================= -->
+<section class="sec alt" id="supply">
+  <div class="wrap">
+    <div class="eyebrow">Supply</div>
+    <h2 class="h2" style="margin-top:8px">Why four listings would not be four risks</h2>
+    <p class="p" style="margin-top:8px; max-width:76ch">Every one of these would be made on our own floor in Cedartown. That is not a credential, it is the reason the answer to a reorder, a reformulation or a flavour change is weeks rather than quarters.</p>
+
+    <div class="split" style="margin-top:22px">
+      <div>
+        <div class="eyebrow q">Order to shipment</div>
+        <svg class="chart" style="margin-top:12px" viewBox="0 0 520 150" role="img" aria-label="Lead time: four weeks against a twelve to sixteen week industry norm">
+          <text x="0" y="14" font-size="10.5" letter-spacing="1.4" fill="#697376">F.A.M.E.</text>
+          <rect x="0" y="22" width="120" height="30" rx="3" fill="#0FA6B6"/>
+          <text x="132" y="43" font-size="15" font-weight="700" fill="#111819">4 weeks</text>
+          <text x="0" y="82" font-size="10.5" letter-spacing="1.4" fill="#697376">INDUSTRY NORM</text>
+          <rect x="0" y="90" width="480" height="30" rx="3" fill="#D8D5CD"/>
+          <text x="240" y="111" font-size="15" font-weight="700" fill="#2C2F30" text-anchor="middle">12&ndash;16 weeks</text>
+          <line x1="0" y1="132" x2="480" y2="132" stroke="rgba(17,24,25,.2)"/>
+          <text x="0" y="147" font-size="10.5" fill="#697376">0</text><text x="180" y="147" font-size="10.5" fill="#697376">6</text>
+          <text x="360" y="147" font-size="10.5" fill="#697376">12</text><text x="480" y="147" font-size="10.5" fill="#697376" text-anchor="end">16</text>
+        </svg>
+        <p class="sm" style="margin-top:8px">On runs of 30,000+ units, against a 12&ndash;16 week industry norm per ASCM. Smaller stock runs ship in days.</p>
+      </div>
+      <div>
+        <div class="eyebrow q">What owning the floor changes</div>
+        <table class="t" style="margin-top:12px">
+          <tr><th style="width:46%">A typical supplier</th><th>Us</th></tr>
+          <tr><td>Books a co-manufacturer</td><td>Walks down the corridor</td></tr>
+          <tr><td>Waits on a flavour house</td><td>1,000+ flavours already in rotation</td></tr>
+          <tr><td>Sends samples out for testing</td><td>ISO 17025 lab on site</td></tr>
+          <tr><td>Reformulates from scratch</td><td>800+ stock formulas to start from</td></tr>
+          <tr class="hi"><td>One brand at a time</td><td>Four, off two format families</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="seq">
+      <div class="r"><div class="o">First</div><div class="n">PLUS 1</div><div class="w">The pack system is designed and the base formula is in stock. The shortest distance between this page and a planogram.</div></div>
+      <div class="r"><div class="o">Second</div><div class="n">CARRY</div><div class="w">Straight down the sachet line at 50,000 a day, opening three shelf zones at once.</div></div>
+      <div class="r"><div class="o">Third</div><div class="n">STALK</div><div class="w">The premium tier, arriving with its science already published rather than promised.</div></div>
+      <div class="r"><div class="o">Fourth</div><div class="n">Mero Mero</div><div class="w">Launches with its founders and creators on the brand, which is what makes the flavour claim credible.</div></div>
+    </div>
+    <p class="sm" style="margin-top:12px">Stock formulations from 500 units, custom from 1,000, stick packs from 30,000. Retail-compliant documentation from the first run: COAs on every batch, and label regulatory review handled in house.</p>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <h2 class="h1">Four gaps. Four brands.<br>One floor behind them.</h2>
+    <p class="lede" style="margin-top:12px; max-width:64ch">Take one, take all four. The advantage is the same either way: the company that would make it is the company you are talking to.</p>
+    <div class="band"><span class="eyebrow q">Standing rule</span><span class="ln"></span></div>
+    <p class="p" style="max-width:82ch">These are dietary supplements. Every brand speaks in structure and function claims, and none of them treats, cures or prevents anything. Nothing in this document has been designed, formulated or priced. Every figure shown is indicative and would be set with the partner.</p>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="band">
+      <span class="eyebrow q">F.A.M.E. Health Labs &middot; VITE90</span><span class="ln"></span>
+      <span class="eyebrow q">Private &amp; Confidential &middot; August 2026</span>
+    </div>
+    3520 Lees Chapel Road, Cedartown, GA 30125 &middot; famehealthlabs.com
+  </div>
+</footer>
+
+<script>
+(function(){
+  var links = Array.prototype.slice.call(document.querySelectorAll('.nav a'));
+  var targets = links.map(function(a){ return document.querySelector(a.getAttribute('href')); });
+  function mark(){
+    var y = window.scrollY + 150, best = 0;
+    targets.forEach(function(t,i){ if(t && t.offsetTop <= y) best = i; });
+    links.forEach(function(a,i){ a.setAttribute('aria-current', i===best ? 'true' : 'false'); });
+  }
+  var tick=false;
+  window.addEventListener('scroll', function(){ if(tick) return; tick=true;
+    requestAnimationFrame(function(){ mark(); tick=false; }); }, {passive:true});
+  mark();
+})();
+</script>
