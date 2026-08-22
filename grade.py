@@ -32,10 +32,24 @@ def ramp_mask(h,w,start=.42,strength=1.0):
     t=t*t*(3-2*t)                                   # smoothstep, so there is no visible edge
     return (1.0-strength*t)[:,None,None]
 
+def shadow_lift(x, knee=.50, strength=.85):
+    """Open the shadows without greying the picture.
+
+    Adding a constant to R, G and B lifts brightness but also desaturates, which
+    is what made the first attempt look like a veil. Instead: work out the new
+    luminance, then scale the pixel by the ratio, so hue and saturation survive
+    untouched and only the brightness moves. Nothing above the knee is affected,
+    and the label sits above it, so legibility is unchanged."""
+    y=np.clip((x*np.array([.2126,.7152,.0722],np.float32)).sum(-1,keepdims=True),1e-4,1)
+    t=np.clip(y/knee,0,1)
+    y2=np.clip(y+strength*knee*(1-t)**2*y**0.35,0,1)
+    return np.clip(x*(y2/y),0,1)
+
 def grade(name,out,label_band=.30,target=.19,grain=4.4,seed=7,quality=84,
-          with_ramp=True,start=.42,**kw):
+          with_ramp=True,start=.42,lift_knee=.46,lift_strength=.38,**kw):
     im=Image.open(os.path.join(RAW,name)).convert('RGB')
     x=base(np.asarray(im).astype(np.float32)/255.0,**kw)
+    x=shadow_lift(x,lift_knee,lift_strength)
     h,w,_=x.shape
     s=0.0
     if with_ramp:
