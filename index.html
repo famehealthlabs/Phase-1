@@ -57,18 +57,11 @@ a{color:inherit}
 
 .nav{position:sticky; top:0; z-index:60; background:var(--paper);
   border-top:1px solid var(--ink); border-bottom:1px solid var(--ink)}
-.nav .in{max-width:var(--maxw); margin:0 auto; padding:0 var(--gut); display:flex; align-items:stretch}
-.nav .meta{display:flex; align-items:stretch; border-bottom:1px solid var(--ink); background:var(--paper)}
-.nav .meta .in{padding:0 var(--gut)}
-.nav .meta .c{flex:1 1 0; min-width:0; display:flex; gap:12px; align-items:center; padding:11px clamp(10px,1.4vw,22px);
-  border-right:1px solid var(--ink); font-size:12px; font-weight:300; color:var(--muted); white-space:nowrap; overflow:hidden}
-.nav .meta .c:first-child{padding-left:0}
-.nav .meta .c:last-child{border-right:0; padding-right:0}
-.nav .meta .c b{font-weight:600; color:var(--ink)}
-@media (max-width:900px){ .nav .meta{display:none} }
-.nav a{flex:1 1 0; min-width:0; display:flex; align-items:center; gap:10px; text-decoration:none;
-  font-size:12.5px; color:var(--ink70); padding:15px clamp(10px,1.4vw,22px);
-  border-right:1px solid var(--ink); font-weight:300; white-space:nowrap; overflow:hidden}
+.nav .in{max-width:var(--maxw); margin:0 auto; padding:0 var(--gut); display:flex; align-items:stretch; justify-content:flex-start}
+.nav a{flex:0 1 auto; min-width:0; display:flex; align-items:center; gap:10px; text-decoration:none;
+  font-size:12.5px; color:var(--ink70); padding:15px clamp(14px,1.8vw,28px);
+  border-right:1px solid var(--ink); font-weight:300; white-space:nowrap;
+  overflow:hidden; text-overflow:ellipsis}
 .nav a:first-child{padding-left:0}
 .nav a:last-child{border-right:0; padding-right:0}
 .nav a i{font-style:normal; font-weight:600; color:var(--ink); letter-spacing:.02em}
@@ -113,15 +106,26 @@ a{color:inherit}
 .chip{border:1px solid var(--rules); padding:8px 13px; font-size:12.5px; color:var(--ink70); white-space:nowrap; font-weight:400}
 
 details.fold{margin-top:clamp(30px,3.4vw,46px); border-top:1px solid var(--rules)}
-details.fold>summary{list-style:none; cursor:pointer; padding:20px 0; display:flex;
-  align-items:center; justify-content:space-between; gap:20px; font-size:15px; font-weight:400; color:var(--ink)}
+details.fold>summary{list-style:none; cursor:pointer; padding:16px 14px; margin:0 -14px; display:flex;
+  align-items:center; justify-content:space-between; gap:20px; font-size:15px; font-weight:500; color:var(--ink);
+  transition:background .15s ease}
 details.fold>summary::-webkit-details-marker{display:none}
-details.fold>summary .hint{font-size:13px; color:var(--muted); font-weight:300; margin-left:auto; margin-right:16px}
-details.fold>summary .pm{position:relative; width:14px; height:14px; flex:0 0 auto}
-details.fold>summary .pm::before,details.fold>summary .pm::after{content:""; position:absolute; background:var(--ink);
-  left:0; top:6.5px; width:14px; height:1px; transition:transform .18s ease}
+details.fold>summary:hover{background:var(--cream)}
+details.fold>summary:focus-visible{outline:2px solid var(--ad); outline-offset:2px}
+details.fold>summary .hint{font-size:13px; color:var(--ad); font-weight:500; letter-spacing:.02em;
+  margin-left:auto; margin-right:14px}
+details.fold>summary .hint i{font-style:normal}
+details.fold>summary .hint .c{display:none}
+details.fold[open]>summary .hint .o{display:none}
+details.fold[open]>summary .hint .c{display:inline}
+details.fold>summary .pm{position:relative; width:34px; height:34px; flex:0 0 auto; border-radius:50%;
+  border:1px solid var(--ad); transition:background .15s ease}
+details.fold>summary .pm::before,details.fold>summary .pm::after{content:""; position:absolute; background:var(--ad);
+  left:9px; top:15.5px; width:15px; height:2px; transition:transform .2s ease, background .15s ease}
 details.fold>summary .pm::after{transform:rotate(90deg)}
 details.fold[open]>summary .pm::after{transform:rotate(0deg)}
+details.fold>summary:hover .pm{background:var(--ad)}
+details.fold>summary:hover .pm::before,details.fold>summary:hover .pm::after{background:#fff}
 details.fold .body{padding:2px 0 46px}
 details.fold .body>*:first-child{margin-top:30px}
 @media (prefers-reduced-motion:reduce){details.fold>summary .pm::before,details.fold>summary .pm::after{transition:none}}
@@ -324,13 +328,6 @@ table.t tr.hi td{font-weight:600; color:var(--ink)}
 </style>
 
 <nav class="nav">
-  <div class="meta"><div class="in" style="display:flex; max-width:var(--maxw); margin:0 auto; width:100%">
-    <div class="c"><b>Phase One</b></div>
-    <div class="c"><b>Brand portfolio</b></div>
-    <div class="c"><b>VITE90</b></div>
-    <div class="c">The Nutraceutical Supply Chain. Rebuilt.</div>
-    <div class="c"><b>Date</b> August 2026</div>
-  </div></div>
   <div class="in">
     <a class="hm" href="#company"><svg class="mk" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18.5" fill="none" stroke="#000" stroke-width="1.6"/><rect x="12" y="12" width="16" height="16" fill="none" stroke="#000" stroke-width="1.6"/></svg> Phase One</a>
     <a href="#overview">The four brands</a>
@@ -364,6 +361,7 @@ table.t tr.hi td{font-weight:600; color:var(--ink)}
     </div>
     <div class="rail"><div class="in">
       <div class="c"><b>Document</b><span>Brand portfolio</span></div>
+      <div class="c"><b>Phase</b><span>One</span></div>
       <div class="c"><b>Studio</b><span>VITE90</span></div>
       <div class="c"><b>Made by</b><span>F.A.M.E. Health Labs</span></div>
       <div class="c"><b>Status</b><span>Private &amp; Confidential</span></div>
@@ -440,7 +438,7 @@ table.t tr.hi td{font-weight:600; color:var(--ink)}
     </div>
 
     <details class="fold">
-      <summary><span>The four, side by side</span><span class="hint">Open</span><span class="pm"></span></summary>
+      <summary><span>The four, side by side</span><span class="hint"><i class="o">Open</i><i class="c">Close</i></span><span class="pm"></span></summary>
       <div class="body"><table class="t" style="margin-top:22px">
       <tr><th style="width:16%">Brand</th><th style="width:26%">The idea</th><th style="width:27%">Who is there today</th><th>Why we win</th></tr>
       <tr><td><b>Child development nutrition</b><br><span class="sm">Working name STALK</span></td><td>A premium daily powder built for the developmental years</td><td>NuBest, Doctor Taller, TrueHeight, and the gummy brands below them</td><td>We sell on evidence, with our own lab behind every claim</td></tr>
@@ -532,7 +530,7 @@ table.t tr.hi td{font-weight:600; color:var(--ink)}
       <div><b>One serving</b>Sachet, stick or tub.</div>
     </div>
     <details class="fold">
-      <summary><span>The range, and how it is built</span><span class="hint">Open</span><span class="pm"></span></summary>
+      <summary><span>The range, and how it is built</span><span class="hint"><i class="o">Open</i><i class="c">Close</i></span><span class="pm"></span></summary>
       <div class="body"><div class="card">
       <span class="pill">The range</span>
       <div class="split">
@@ -590,7 +588,7 @@ table.t tr.hi td{font-weight:600; color:var(--ink)}
     </div>
 
           <details class="fold">
-      <summary><span>Why it could win</span><span class="hint">Open</span><span class="pm"></span></summary>
+      <summary><span>Why it could win</span><span class="hint"><i class="o">Open</i><i class="c">Close</i></span><span class="pm"></span></summary>
       <div class="body"><div class="win">
         <div class="hd">Why it could win</div>
         <div class="rows">
@@ -603,7 +601,7 @@ table.t tr.hi td{font-weight:600; color:var(--ink)}
     </details>
 
       <details class="fold">
-      <summary><span>The competition, and what each of them misses</span><span class="hint">Open</span><span class="pm"></span></summary>
+      <summary><span>The competition, and what each of them misses</span><span class="hint"><i class="o">Open</i><i class="c">Close</i></span><span class="pm"></span></summary>
       <div class="body"><div class="refs">
         <div class="eyebrow q">What the category already proved</div>
         <div class="strip">
@@ -619,7 +617,7 @@ table.t tr.hi td{font-weight:600; color:var(--ink)}
             
 
 <details class="fold">
-      <summary><span>How it launches</span><span class="hint">Open</span><span class="pm"></span></summary>
+      <summary><span>How it launches</span><span class="hint"><i class="o">Open</i><i class="c">Close</i></span><span class="pm"></span></summary>
       <div class="body"><div class="gtm">
       <div class="hd">How it launches</div>
       <div class="rows">
@@ -698,7 +696,7 @@ table.t tr.hi td{font-weight:600; color:var(--ink)}
       <div><b>Night out</b>The occasion that recruits, and the one that gets filmed.</div>
     </div>
     <details class="fold">
-      <summary><span>The range, and how it is built</span><span class="hint">Open</span><span class="pm"></span></summary>
+      <summary><span>The range, and how it is built</span><span class="hint"><i class="o">Open</i><i class="c">Close</i></span><span class="pm"></span></summary>
       <div class="body"><div class="card">
       <span class="pill">The range</span>
       <div class="split">
@@ -765,7 +763,7 @@ table.t tr.hi td{font-weight:600; color:var(--ink)}
     </div>
 
           <details class="fold">
-      <summary><span>Why it could win</span><span class="hint">Open</span><span class="pm"></span></summary>
+      <summary><span>Why it could win</span><span class="hint"><i class="o">Open</i><i class="c">Close</i></span><span class="pm"></span></summary>
       <div class="body"><div class="win">
         <div class="hd">Why it could win</div>
         <div class="rows">
@@ -778,7 +776,7 @@ table.t tr.hi td{font-weight:600; color:var(--ink)}
     </details>
 
             <details class="fold">
-      <summary><span>The competition, and what each of them misses</span><span class="hint">Open</span><span class="pm"></span></summary>
+      <summary><span>The competition, and what each of them misses</span><span class="hint"><i class="o">Open</i><i class="c">Close</i></span><span class="pm"></span></summary>
       <div class="body"><div class="refs">
         <div class="eyebrow q">The competition, plainly</div>
         <div class="strip">
@@ -794,7 +792,7 @@ table.t tr.hi td{font-weight:600; color:var(--ink)}
       
 
 <details class="fold">
-      <summary><span>How it launches</span><span class="hint">Open</span><span class="pm"></span></summary>
+      <summary><span>How it launches</span><span class="hint"><i class="o">Open</i><i class="c">Close</i></span><span class="pm"></span></summary>
       <div class="body"><div class="gtm">
       <div class="hd">How it launches</div>
       <div class="rows">
@@ -878,7 +876,7 @@ table.t tr.hi td{font-weight:600; color:var(--ink)}
       <div><b>Pocket</b>The whole idea.</div>
     </div>
     <details class="fold">
-      <summary><span>The range, and how it is built</span><span class="hint">Open</span><span class="pm"></span></summary>
+      <summary><span>The range, and how it is built</span><span class="hint"><i class="o">Open</i><i class="c">Close</i></span><span class="pm"></span></summary>
       <div class="body"><div class="card">
       <span class="pill">The range</span>
       <div class="split">
@@ -929,7 +927,7 @@ table.t tr.hi td{font-weight:600; color:var(--ink)}
     </div>
 
           <details class="fold">
-      <summary><span>Why it could win</span><span class="hint">Open</span><span class="pm"></span></summary>
+      <summary><span>Why it could win</span><span class="hint"><i class="o">Open</i><i class="c">Close</i></span><span class="pm"></span></summary>
       <div class="body"><div class="win">
         <div class="hd">Why it could win</div>
         <div class="rows">
@@ -942,7 +940,7 @@ table.t tr.hi td{font-weight:600; color:var(--ink)}
     </details>
 
             <details class="fold">
-      <summary><span>The competition, and what each of them misses</span><span class="hint">Open</span><span class="pm"></span></summary>
+      <summary><span>The competition, and what each of them misses</span><span class="hint"><i class="o">Open</i><i class="c">Close</i></span><span class="pm"></span></summary>
       <div class="body"><div class="refs">
         <div class="eyebrow q">The competition, plainly</div>
         <div class="strip">
@@ -957,7 +955,7 @@ table.t tr.hi td{font-weight:600; color:var(--ink)}
       
 
 <details class="fold">
-      <summary><span>How it launches</span><span class="hint">Open</span><span class="pm"></span></summary>
+      <summary><span>How it launches</span><span class="hint"><i class="o">Open</i><i class="c">Close</i></span><span class="pm"></span></summary>
       <div class="body"><div class="gtm">
       <div class="hd">How it launches</div>
       <div class="rows">
@@ -1040,7 +1038,7 @@ table.t tr.hi td{font-weight:600; color:var(--ink)}
       <div><b>Jamaica</b>Already in the chilled aisle.</div>
     </div>
     <details class="fold">
-      <summary><span>The range, and how it is built</span><span class="hint">Open</span><span class="pm"></span></summary>
+      <summary><span>The range, and how it is built</span><span class="hint"><i class="o">Open</i><i class="c">Close</i></span><span class="pm"></span></summary>
       <div class="body"><div class="card">
       <span class="pill">The range</span>
       <div class="split">
@@ -1092,7 +1090,7 @@ table.t tr.hi td{font-weight:600; color:var(--ink)}
     </div>
 
           <details class="fold">
-      <summary><span>Why it could win</span><span class="hint">Open</span><span class="pm"></span></summary>
+      <summary><span>Why it could win</span><span class="hint"><i class="o">Open</i><i class="c">Close</i></span><span class="pm"></span></summary>
       <div class="body"><div class="win">
         <div class="hd">Why it could win</div>
         <div class="rows">
@@ -1105,7 +1103,7 @@ table.t tr.hi td{font-weight:600; color:var(--ink)}
     </details>
 
       <details class="fold">
-      <summary><span>The competition, and what each of them misses</span><span class="hint">Open</span><span class="pm"></span></summary>
+      <summary><span>The competition, and what each of them misses</span><span class="hint"><i class="o">Open</i><i class="c">Close</i></span><span class="pm"></span></summary>
       <div class="body"><div class="refs">
         <div class="eyebrow q">What the category already proved</div>
         <div class="strip">
@@ -1118,7 +1116,7 @@ table.t tr.hi td{font-weight:600; color:var(--ink)}
     </details>
 
 <details class="fold">
-      <summary><span>How it launches</span><span class="hint">Open</span><span class="pm"></span></summary>
+      <summary><span>How it launches</span><span class="hint"><i class="o">Open</i><i class="c">Close</i></span><span class="pm"></span></summary>
       <div class="body"><div class="gtm">
       <div class="hd">How it launches</div>
       <div class="rows">
@@ -1198,7 +1196,7 @@ table.t tr.hi td{font-weight:600; color:var(--ink)}
 <section class="sec">
   <div class="wrap">
     <details class="fold" id="sources" style="margin-top:0">
-      <summary><span>Where every number in this document comes from</span><span class="hint">Sources</span><span class="pm"></span></summary>
+      <summary><span>Where every number in this document comes from</span><span class="hint"><i class="o">Sources</i><i class="c">Close</i></span><span class="pm"></span></summary>
       <div class="body">
         <p class="p" style="max-width:80ch">Everything below is either a F.A.M.E. figure we can evidence, a published market figure
         with its source named, or a document written for this portfolio. Where a claim is our own reading rather than a measured
