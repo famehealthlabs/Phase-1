@@ -16,8 +16,7 @@
   --tealrule:rgba(29,189,203,.5);
   --rules:rgba(0,0,0,.22);
   --maxw:1440px; --gut:clamp(18px,8vw,120px);
-  --cell:calc(var(--maxw) / 12);              /* the module every rule and cell lands on */
-  --grid:rgba(0,0,0,.14);
+  --cell:calc(var(--maxw) / 12);              /* the module the gutter and columns land on */
   --sans:"Manrope", -apple-system, "Helvetica Neue", Arial, sans-serif;
 }
 /* One accent, the house teal, used only as a mark. Colour otherwise comes from the photographs.
@@ -25,26 +24,12 @@
 
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0; color:var(--ink); font-family:var(--sans); font-weight:300;
-  -webkit-font-smoothing:antialiased; line-height:1.5; font-size:18px;
-  background-color:var(--paper2);
-  background-image:
-    repeating-linear-gradient(to right, var(--grid) 0 1px, transparent 1px var(--cell)),
-    repeating-linear-gradient(to bottom, var(--grid) 0 1px, transparent 1px var(--cell));
-  background-position:calc(50% + .5px) 0;
-}
-/* Anything opaque sits on the grid and hides it, exactly as the reference does. */
-.sec.alt,.fullbleed,.gapband,.bhead,.tio,.cardgrid,.who,.gal,.divider{background-clip:padding-box}
-
+body{margin:0; background:var(--paper2); color:var(--ink); font-family:var(--sans); font-weight:300;
+  -webkit-font-smoothing:antialiased; line-height:1.5; font-size:18px}
 /* The section divider: one word on a field of colour with the grid still ruled across it. */
 .divider{background:var(--teald); color:#fff; border-top:1px solid var(--ink); border-bottom:1px solid var(--ink);
-  padding:clamp(70px,10vw,180px) 0; position:relative; overflow:hidden}
-.divider::before{content:""; position:absolute; inset:0; pointer-events:none;
-  background-image:
-    repeating-linear-gradient(to right, rgba(255,255,255,.22) 0 1px, transparent 1px var(--cell)),
-    repeating-linear-gradient(to bottom, rgba(255,255,255,.22) 0 1px, transparent 1px var(--cell));
-  background-position:calc(50% + .5px) 0}
-.divider .in{position:relative; z-index:2; max-width:var(--maxw); margin:0 auto; padding:0 var(--gut)}
+  padding:clamp(70px,10vw,180px) 0}
+.divider .in{max-width:var(--maxw); margin:0 auto; padding:0 var(--gut)}
 .divider h2{font-size:clamp(44px,8vw,118px); font-weight:300; letter-spacing:.002em; line-height:1; color:#fff}
 .divider p{margin-top:clamp(20px,2.4vw,34px); max-width:46ch; color:rgba(255,255,255,.86);
   font-size:clamp(15px,1.3vw,19px); font-weight:300; line-height:1.6}
@@ -335,7 +320,6 @@ table.t tr.hi td{font-weight:600; color:var(--ink)}
   .rail .c{flex:1 0 100%; border-right:0; border-bottom:1px solid var(--rules)}
   .comm .c{padding-right:14px}
 }
-@media (max-width:900px){ :root{--cell:calc(var(--maxw) / 24)} body{background-image:none} }
 @media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto} }
 </style>
 
