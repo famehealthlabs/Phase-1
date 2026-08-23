@@ -50,18 +50,10 @@ body{margin:0; color:var(--ink); font-family:var(--sans); font-weight:300;
   font-size:clamp(15px,1.3vw,19px); font-weight:300; line-height:1.6}
 
 /* Squared circles: an image masked into a quarter of a circle inside a square cell. */
-.arcs{display:grid; grid-template-columns:repeat(3,1fr); gap:0; margin-top:clamp(32px,3.8vw,56px);
-  border:1px solid var(--ink)}
-.arc{position:relative; overflow:hidden; aspect-ratio:1; border-right:1px solid var(--ink); border-bottom:1px solid var(--ink)}
-.arcs .arc:nth-child(3n){border-right:0}
-.arcs .arc:nth-last-child(-n+3){border-bottom:0}
-.arc>img{width:100%; height:100%; object-fit:cover; display:block}
-.arc.tl>img{border-top-left-radius:100%}
-.arc.tr>img{border-top-right-radius:100%}
-.arc.br>img{border-bottom-right-radius:100%}
-.arc.bl>img{border-bottom-left-radius:100%}
-.arc.half>img{border-radius:100% 100% 0 0}
-.arc.full>img{border-radius:50%}
+.arcs{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--ink);
+  margin-top:clamp(32px,3.8vw,56px); border:1px solid var(--ink)}
+.arc{position:relative; overflow:hidden; background:var(--cream)}
+.arc>img{width:100%; height:100%; object-fit:cover; display:block; aspect-ratio:4/3}
 .arccap{display:grid; grid-template-columns:repeat(3,1fr); border-left:1px solid var(--ink);
   border-right:1px solid var(--ink); border-bottom:1px solid var(--ink)}
 .arccap div{padding:14px clamp(12px,1.4vw,20px); border-right:1px solid var(--ink); font-size:13px;
@@ -363,7 +355,6 @@ table.t tr.hi td{font-weight:600; color:var(--ink)}
     <a href="#carry"><i>03</i> Protein</a>
     <a href="#mero"><i>04</i> Latin flavour</a>
     <a href="#supply"><i>05</i> Supply</a>
-    <a href="#sources">Sources</a>
   </div>
 </nav>
 
@@ -424,20 +415,24 @@ table.t tr.hi td{font-weight:600; color:var(--ink)}
           <span class="chip">cGMP</span>
           <span class="chip">SQF</span>
           <span class="chip">NSF</span>
+          <span class="chip">MOSA Certified Organic</span>
           <span class="chip">ISO 17025</span>
-          <span class="chip">Halal &middot; Kosher</span>
+          <span class="chip">ISO 9001:2015</span>
           <span class="chip">Health Canada</span>
+          <span class="chip">Halal</span>
+          <span class="chip">Kosher</span>
+          <span class="chip">Made in USA</span>
         </div>
       </div>
     </div>
 
     <div class="covstats c3">
       <div class="fg"><div class="v">800+</div><div class="k">Stock formulas</div></div>
-      <div class="fg"><div class="v">1,000+</div><div class="k">Flavours</div></div>
+      <div class="fg"><div class="v">10,000+</div><div class="k">Flavour actives</div></div>
       <div class="fg"><div class="v">10,000+</div><div class="k">Ingredients</div></div>
       <div class="fg"><div class="v">65+</div><div class="k">Categories</div></div>
       <div class="fg"><div class="v">100M+</div><div class="k">Capsules a day</div></div>
-      <div class="fg"><div class="v">400M+</div><div class="k">Sticks a year</div></div>
+      <div class="fg"><div class="v">50,000+</div><div class="k">Sachets a day</div></div>
     </div>
 
   </div>
@@ -543,9 +538,9 @@ table.t tr.hi td{font-weight:600; color:var(--ink)}
 
 
     <div class="arcs">
-      <div class="arc tl"><img loading="lazy" decoding="async" src="img/ms-stalk-2.jpg" alt="A bright family breakfast"></div>
-      <div class="arc half"><img loading="lazy" decoding="async" src="img/ms-stalk-3.jpg" alt="Height marks on a door frame"></div>
-      <div class="arc tr"><img loading="lazy" decoding="async" src="img/ms-stalk-1.jpg" alt="Powder poured into a glass"></div>
+      <div class="arc"><img loading="lazy" decoding="async" src="img/ms-stalk-2.jpg" alt="A bright family breakfast"></div>
+      <div class="arc"><img loading="lazy" decoding="async" src="img/ms-stalk-3.jpg" alt="Height marks on a door frame"></div>
+      <div class="arc"><img loading="lazy" decoding="async" src="img/ms-stalk-1.jpg" alt="Powder poured into a glass"></div>
     </div>
     <div class="arccap">
       <div><b>The daily minute</b>A breakfast table is where this is won or lost, seven mornings a week.</div>
@@ -709,9 +704,9 @@ table.t tr.hi td{font-weight:600; color:var(--ink)}
 
 
     <div class="arcs">
-      <div class="arc tl"><img loading="lazy" decoding="async" src="img/ms-plus-1.jpg" alt="A stick pack torn open poolside"></div>
-      <div class="arc half"><img loading="lazy" decoding="async" src="img/ms-plus-3.jpg" alt="An airport terminal in daylight"></div>
-      <div class="arc tr"><img loading="lazy" decoding="async" src="img/ms-plus-2.jpg" alt="A festival crowd in daylight"></div>
+      <div class="arc"><img loading="lazy" decoding="async" src="img/ms-plus-1.jpg" alt="A stick pack torn open poolside"></div>
+      <div class="arc"><img loading="lazy" decoding="async" src="img/ms-plus-3.jpg" alt="An airport terminal in daylight"></div>
+      <div class="arc"><img loading="lazy" decoding="async" src="img/ms-plus-2.jpg" alt="A festival crowd in daylight"></div>
     </div>
     <div class="arccap">
       <div><b>The tear</b>Sixteen grams, one hand, anywhere.</div>
@@ -889,9 +884,9 @@ table.t tr.hi td{font-weight:600; color:var(--ink)}
 
 
     <div class="arcs">
-      <div class="arc tl"><img loading="lazy" decoding="async" src="img/ms-carry-2.jpg" alt="A hotel room desk in morning light"></div>
-      <div class="arc half"><img loading="lazy" decoding="async" src="img/ms-carry-3.jpg" alt="A gym bag on a bench"></div>
-      <div class="arc tr"><img loading="lazy" decoding="async" src="img/ms-carry-1.jpg" alt="A sachet slipped into a pocket"></div>
+      <div class="arc"><img loading="lazy" decoding="async" src="img/ms-carry-2.jpg" alt="A hotel room desk in morning light"></div>
+      <div class="arc"><img loading="lazy" decoding="async" src="img/ms-carry-3.jpg" alt="A gym bag on a bench"></div>
+      <div class="arc"><img loading="lazy" decoding="async" src="img/ms-carry-1.jpg" alt="A sachet slipped into a pocket"></div>
     </div>
     <div class="arccap">
       <div><b>A kettle and a mug</b>That is the whole preparation.</div>
@@ -1017,7 +1012,7 @@ table.t tr.hi td{font-weight:600; color:var(--ink)}
           <p class="p">Taste Salud saw this first: agua fresca flavours in a functional powder. It is one young brand in one category, and the majors still have not moved. The window is open, not empty.</p>
         </div>
         <div>
-          <p class="p"><b style="color:#fff">Why we can win it.</b> Flavour is the whole product here, and flavour is the part of the supply chain we own outright. We hold 1,000+ in rotation and run a flavour lab on site, so one flavour system can carry hydration, collagen, protein and whatever comes next. A brand that buys its manufacturing has to negotiate every one of those.</p>
+          <p class="p"><b style="color:#fff">Why we can win it.</b> Flavour is the whole product here, and flavour is the part of the supply chain we own outright. We hold 10,000+ flavour actives and run a flavour lab on site, so one flavour system can carry hydration, collagen, protein and whatever comes next. A brand that buys its manufacturing has to negotiate every one of those.</p>
         </div>
       </div>
     </div>
@@ -1051,9 +1046,9 @@ table.t tr.hi td{font-weight:600; color:var(--ink)}
 
 
     <div class="arcs">
-      <div class="arc tl"><img loading="lazy" decoding="async" src="img/ms-mero-3.jpg" alt="A crowded family kitchen table"></div>
-      <div class="arc half"><img loading="lazy" decoding="async" src="img/ms-mero-2.jpg" alt="A rooftop party in the afternoon sun"></div>
-      <div class="arc tr"><img loading="lazy" decoding="async" src="img/ms-mero-4.jpg" alt="A glass of hibiscus agua fresca"></div>
+      <div class="arc"><img loading="lazy" decoding="async" src="img/ms-mero-3.jpg" alt="A crowded family kitchen table"></div>
+      <div class="arc"><img loading="lazy" decoding="async" src="img/ms-mero-2.jpg" alt="A rooftop party in the afternoon sun"></div>
+      <div class="arc"><img loading="lazy" decoding="async" src="img/ms-mero-4.jpg" alt="A glass of hibiscus agua fresca"></div>
     </div>
     <div class="arccap">
       <div><b>The flavour set</b>Chamoy, tajin, mango con chile. Nothing here needs explaining.</div>
@@ -1188,7 +1183,7 @@ table.t tr.hi td{font-weight:600; color:var(--ink)}
         <table class="t" style="margin-top:12px">
           <tr><th style="width:46%">A typical supplier</th><th>Us</th></tr>
           <tr><td>Books a co-manufacturer</td><td>Walks down the corridor</td></tr>
-          <tr><td>Waits on a flavour house</td><td>1,000+ flavours already in rotation</td></tr>
+          <tr><td>Waits on a flavour house</td><td>10,000+ flavour actives on the bench</td></tr>
           <tr><td>Sends samples out for testing</td><td>ISO 17025 lab on site</td></tr>
           <tr><td>Reformulates from scratch</td><td>800+ stock formulas to start from</td></tr>
           <tr class="hi"><td>One brand at a time</td><td>Four, off two format families</td></tr>
@@ -1229,8 +1224,8 @@ table.t tr.hi td{font-weight:600; color:var(--ink)}
         <table class="t">
           <tr><th style="width:36%">Claim</th><th style="width:28%">Source</th><th>Note</th></tr>
           <tr><td>170+ acre campus in Cedartown GA &middot; founded 2023 by Holly Ash &middot; wholly women-owned, zero debt, audited financials &middot; three facilities, 150+ people, five operating companies</td><td>F.A.M.E. platform deck, August 2026, and company records</td><td>Company facts</td></tr>
-          <tr><td>800+ stock formulas &middot; 1,000+ flavours &middot; 10,000+ ingredients &middot; 65+ categories</td><td>F.A.M.E. catalogue, August 2026</td><td>The live catalogue export held 851 SKUs</td></tr>
-          <tr><td>100M+ capsules a day &middot; 50,000 sachets a day &middot; 400M+ stick packs a year</td><td>F.A.M.E. production capacity, August 2026</td><td>The stick-pack line is purpose-built, not repurposed</td></tr>
+          <tr><td>800+ stock formulas &middot; 10,000+ flavour actives &middot; 10,000+ ingredients &middot; 65+ categories</td><td>F.A.M.E. catalogue, August 2026</td><td>The live catalogue export held 851 SKUs</td></tr>
+          <tr><td>100M+ capsules a day &middot; 50,000+ sachets a day</td><td>F.A.M.E. production capacity, August 2026</td><td>&mdash;</td></tr>
           <tr class="hi"><td>Four weeks from order to shipment</td><td>F.A.M.E. commercial terms; industry norm per ASCM</td><td>Runs of 30,000+ units only. Smaller stock runs ship in days. Carried with that qualifier everywhere it appears</td></tr>
           <tr><td>Stock from 500 units &middot; custom from 1,000 &middot; stick packs from 30,000</td><td>F.A.M.E. commercial terms, August 2026</td><td>Stick packs are the one format exception</td></tr>
           <tr><td>FDA registered &middot; cGMP &middot; SQF &middot; NSF &middot; ISO 17025 &middot; Halal &middot; Kosher &middot; Health Canada</td><td>Certificates held. ISO 17025 is cur&iacute;</td><td>&mdash;</td></tr>
